@@ -1,7 +1,8 @@
 import React from "react";
+import { SideBar } from "../components/organisms/SideBar";
 
 const Home = () => {
-  return <div>Home Page</div>;
+  return <div><SideBar /></div>;
 };
 
 export default Home;
