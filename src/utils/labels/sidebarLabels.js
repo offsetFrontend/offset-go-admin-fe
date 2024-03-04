@@ -49,7 +49,7 @@ export const SideBarLabels = {
       icon: <Forms className='w-4 h-4' />,
       TabTitle: 'Forms',
       link: '/',
-      subMenu: [  // Sub-menu items for the "Forms" tab
+      subMenu: [  
       {
         id: '0061',
         TabTitle: 'Contact Us',

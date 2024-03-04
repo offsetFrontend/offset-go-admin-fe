@@ -48,7 +48,7 @@ export const SideBar = () => {
                           className='flex items-center p-2 text-grey-700 rounded-lg ml-6 relative group'
                         >
                           <span className='ml-1 mt-2 text-[10px]'>{TabTitle}</span>
-                          {/* Applying a SVG before the subitems using before: variant */}
+                          
                           <div className="absolute left-[-10px] top-[-15px] transform -translate-y-3/4 before:block before:content before:'' w-4 h-4 fill-current text-gray-500 group-hover:text-gray-700 z-0">
                             <svg
                               width='18'
