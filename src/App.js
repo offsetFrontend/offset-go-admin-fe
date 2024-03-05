@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Projects from "./pages/Projects"
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="*" element={<p>Path doesn't exist</p>} />
       </Routes>
     </main>
