@@ -20,15 +20,15 @@ const NavButton = ({ id, TabTitle, link, icon, subMenu }) => {
             <span className='ml-3'>{TabTitle}</span>
           </div>
           {subMenuOpen && (
-            <div className="ml-6">
+            <div className="">
               {subMenu.map(({ id, TabTitle, link }) => (
                 <Link
                   key={id}
                   to={link}
-                  className='flex items-center p-2 text-grey-700 rounded-lg ml-6 relative group'
+                  className='flex items-center p-2 text-grey-700 rounded-lg ml-6 relative group mt-[-0.8rem]'
                 >
-                  <span className='ml-[-1.4rem] mt-2 text-[10px]'>{TabTitle}</span>
-                  <div className="absolute left-[-35px] top-[-15px] transform -translate-y-3/4 before:block before:content before:'' w-4 h-4 fill-current text-gray-500 group-hover:text-gray-700 z-0">
+                  <span className=' mt-2 ml-3 text-[10px]'>{TabTitle}</span>
+                  <div className="absolute left-[-10px] top-[-15px] transform -translate-y-3/4 before:block before:content before:'' w-4 h-4 fill-current text-gray-500 group-hover:text-gray-700 z-0">
                             <svg
                               width='18'
                               height='55'
