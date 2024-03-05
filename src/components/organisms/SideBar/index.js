@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { SideBarLabels } from '../../../utils/labels/sidebarLabels'
-
 import NavButton from './navButton'
 
 const SideBar = () => {
