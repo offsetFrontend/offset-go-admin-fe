@@ -31,6 +31,7 @@ const Home = () => {
   return (
     <div className="flex gap-x-4 px-4 pt-4 w-full">
       <SideBar />
+      <div></div>
       <div className="w-[55%]">
         <div className="flex gap-x-4 mb-4">
           <HomeTokenCard tokenName={"gold"} value={16000} delta={"+12%"} />

@@ -27,7 +27,7 @@ const NavButton = ({ id, TabTitle, link, icon, subMenu }) => {
                   to={link}
                   className='flex items-center p-2 text-grey-700 rounded-lg ml-6 relative group mt-[-0.8rem]'
                 >
-                  <span className=' mt-2 ml-3 text-[10px]'>{TabTitle}</span>
+                  <span className=' mt-2 ml-3 text-[10px] text-gray-500'>{TabTitle}</span>
                   <div className="absolute left-[-10px] top-[-15px] transform -translate-y-3/4 before:block before:content before:'' w-4 h-4 fill-current text-gray-500 group-hover:text-gray-700 z-0">
                             <svg
                               width='18'

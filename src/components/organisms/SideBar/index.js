@@ -9,18 +9,19 @@ const SideBar = () => {
 
   return (
     <>
-      <aside className='top-0 left-0 w-full h-full '>
-        <div className='h-full max-w-52 px-3 py-4'>
+      <aside className='top-0 left-0 w-[20%] h-full px-0 pt-0 bg-white'>
+        <div className='h-full px-3 py-4'>
           <Link
             to=''
-            className='relative flex items-center mt-[2.375rem] ml-[1.7rem] mb-5 z-10'
+            className='relative flex justify-center items-center mt-[2.375rem] mb-5 z-10'
           >
             <img
               src='https://offsetgo.s3.ap-south-1.amazonaws.com/assets/Images/Offsetgo-logo.png'
               alt='Logo'
+              className='w-20 h-16'
             />
           </Link>
-          <ul className='space-y-2 mt-10 ml-[1rem] font-medium text-grey-700 leading-5 text-xs'>
+          <ul className='space-y-2 mt-10 ml-[1rem] font-medium text-gray-500 leading-5 text-xs'>
             {Tabs.map(({ id, TabTitle, link, icon, subMenu }) => (
               <NavButton
                 key={id}
