@@ -1,5 +1,5 @@
 import React from "react";
-import  SideBar  from "../components/organisms/SideBar";
+import SideBar from "../components/organisms/SideBar";
 import HomeChart from "../components/molecules/HomeChart";
 import HomeTokenCard from "../components/molecules/HomeTokenCard";
 import Sidewall from "../components/molecules/Sidewall";
@@ -13,7 +13,7 @@ const data1 = [
   { year: 2020, value: 9 },
   { year: 2021, value: 15 },
   { year: 2022, value: 54 },
-  { year: 2023, value: 100 },
+  { year: 2023, value: 100 }
 ];
 
 const data2 = [
@@ -24,14 +24,14 @@ const data2 = [
   { year: 2020, value: 0.9 },
   { year: 2021, value: 1.5 },
   { year: 2022, value: 5.4 },
-  { year: 2023, value: 10 },
+  { year: 2023, value: 10 }
 ];
 
 const Home = () => {
   return (
     <div className="flex gap-x-4 px-4 pt-4 w-full">
       <SideBar />
-      <div></div>
+
       <div className="w-[55%]">
         <div className="flex gap-x-4 mb-4">
           <HomeTokenCard tokenName={"gold"} value={16000} delta={"+12%"} />
@@ -51,7 +51,6 @@ const Home = () => {
       </div>
     </div>
   );
- 
 };
 
 export default Home;
