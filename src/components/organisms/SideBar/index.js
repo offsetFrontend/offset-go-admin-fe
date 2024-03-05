@@ -2,18 +2,18 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { SideBarLabels } from '../../../utils/labels/sidebarLabels'
 
-import NavButton from './navbutton'
+import NavButton from './navButton'
 
 const SideBar = () => {
   const { Tabs } = SideBarLabels
 
   return (
     <>
-      <aside className='top-0 left-0 w-[20%] h-full px-0 pt-0 bg-white'>
+      <aside className='w-[20%] h-full bg-white'>
         <div className='h-full px-3 py-4'>
           <Link
             to=''
-            className='relative flex justify-center items-center mt-[2.375rem] mb-5 z-10'
+            className=' flex justify-center items-center mt-[2.375rem] mb-5 '
           >
             <img
               src='https://offsetgo.s3.ap-south-1.amazonaws.com/assets/Images/Offsetgo-logo.png'
