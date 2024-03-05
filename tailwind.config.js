@@ -14,6 +14,9 @@ module.exports = {
           400: "rgba(67, 97, 238, 0.1)",
           800: "#4361EE",
         },
+        green: {
+          400: "#3BB800",
+        }
       },
       backgroundImage: {
         "gold-gradient": "linear-gradient(to right, #FFE36D, #F4AA26)",
