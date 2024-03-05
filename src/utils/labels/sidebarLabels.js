@@ -1,4 +1,4 @@
-import { ReactComponent as Logo } from '../../assets/svgs/logo.svg'
+
 import { ReactComponent as Projects } from '../../assets/svgs/Projects.svg'
 import { ReactComponent as Reports } from '../../assets/svgs/Reports.svg'
 import { ReactComponent as Settings } from '../../assets/svgs/Settings.svg'
@@ -12,7 +12,7 @@ import { ReactComponent as Forms } from '../../assets/svgs/forms.svg'
 import { ReactComponent as News } from '../../assets/svgs/news.svg'
 
 export const SideBarLabels = {
-  Logo: <Logo />,
+  
   Tabs: [
     {
       id: '001',
