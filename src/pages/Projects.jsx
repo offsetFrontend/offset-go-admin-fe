@@ -2,10 +2,8 @@ import React from "react";
 import Button from "../components/atoms/Button";
 import Badge from "../components/atoms/Badge";
 import { ReactComponent as Filter } from "../assets/filter.svg";
-import FilterDialogBox from "../components/molecules/FilterDialogBox";
 import Table from "../components/atoms/Table";
 const Projects = () => {
-  const [isFilterDialogOpen, setFilterDialogOpen] = useState(false);
   const getHeaderData = () => {
     return [
       "Project Name",
@@ -24,11 +22,11 @@ const Projects = () => {
         12,
         "New",
         <StatusButton
-        statusText={"Verification"}
-        statusButton={() => {
-          handleStatusButton();
-        }}
-      />,
+          statusText={"Verification"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
         "VERRA",
         <ActionButtons />
       ],
@@ -37,11 +35,11 @@ const Projects = () => {
         92,
         "New",
         <StatusButton
-        statusText={"Action Required"}
-        statusButton={() => {
-          handleStatusButton();
-        }}
-      />,
+          statusText={"Action Required"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
         "GOLD STANDARD",
         <ActionButtons />
       ]
@@ -87,13 +85,6 @@ const Projects = () => {
   const handleStatusButton = () => {
     console.log("status button clicked");
   };
-  const handleFilterButtonClick = () => {
-    setFilterDialogOpen(true);
-  };
-
-  const handleFilterDialogClose = () => {
-    setFilterDialogOpen(false);
-  };
 
   return (
     <div className="flex  flex-col pt-4 w-full bg-gray-100 border">
@@ -101,26 +92,14 @@ const Projects = () => {
 
       <div className="w-full h-full pt-4 ml-6 mt-8 bg-white rounded-3xl">
         <div className="flex justify-between pt-5 pb-12">
-          <div className="w-80 border-2 border-grey-800 rounded-lg mx-5 mb-5 ">
-            {/* <SearchBar
-                // onSearch={handleSearch}
-                variant="secondaryxl"
-                className="text-black"
-                borderColor="border-none"
-                placeholderColor="black"
-                inputBackground="white"
-                svgStrokeColor="black"
-                inputWidth="72"
-                inputHeight="8"
-              /> */}
-          </div>
+          <div className="w-80 border-2 border-grey-800 rounded-lg mx-5 mb-5 "></div>
 
           <div className="mr-10 ">
             <Button
               className="flex justify-center items-center gap-x-2 px-2  py-2 h-fit"
               borderColor={"gray"}
               varient={"secondary"}
-              onClick={handleFilterButtonClick}
+              // onClick={handleFilterButtonClick}
             >
               <Filter className="w-4 h-4" />
               <span>Filter</span>
@@ -129,13 +108,6 @@ const Projects = () => {
         </div>
         <Table headerData={getHeaderData()} data={tableData()} />
       </div>
-      {isFilterDialogOpen && (
-        <FilterDialogBox
-          open={isFilterDialogOpen}
-          onCancel={handleFilterDialogClose}
-          onOk={handleFilterDialogClose}
-        />
-      )}
     </div>
   );
 };
