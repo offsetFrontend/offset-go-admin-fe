@@ -20,8 +20,8 @@ const Login = () => {
         </div>
       </div>
 
-      <div className="shrink-0 grow-0 basis-[60%]">
-        <div className="shrink-0 grow-0 flex flex-col items-center px-32 py-20 ">
+      <div className="shrink-0 grow-0 basis-[55%]">
+        <div className="shrink-0 grow-0 flex flex-col items-center px-32 pt-16 pb-4">
           <img
             src="https://offsetgo.s3.ap-south-1.amazonaws.com/assets/Images/Offsetgo-logo.png"
             alt="offset-go-logo"
