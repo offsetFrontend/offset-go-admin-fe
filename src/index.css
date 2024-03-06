@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+@layer components {
+  .diaglogBox .ant-modal-content {
+    @apply font-spaceGrotesk p-0 rounded-[1.25rem];
+  }
+  .custom-radio-buttons .ant-radio-wrapper {
+    @apply font-spaceGrotesk;
+  }
+}
 @layer components {
   .gold-border {
     background: linear-gradient(to right, #F4AA26, #FFE36D);
