@@ -1,8 +1,8 @@
 import React from "react";
-import TableRow from "../../atoms/TableRow";
-import TableData from "../../atoms/TableData";
+import TableRow from "./TableRow";
+import TableData from "./TableData";
 
-const TableBody = ({ data, headerData, bottomLine }) => {
+const TableBody = ({ data, bottomLine }) => {
   return (
     <tbody>
       {data.map((row, rowIndex) => (
@@ -11,9 +11,7 @@ const TableBody = ({ data, headerData, bottomLine }) => {
           bottomLine={bottomLine ? true : rowIndex + 1 !== data.length}
         >
           {row.map((item, index) => (
-            <TableData key={`table-data-${index}`} header={headerData[index]}>
-              {item}
-            </TableData>
+            <TableData key={`table-data-${index}`}>{item}</TableData>
           ))}
         </TableRow>
       ))}

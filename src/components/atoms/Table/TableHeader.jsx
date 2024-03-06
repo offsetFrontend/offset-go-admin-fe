@@ -1,6 +1,6 @@
 import React from "react";
-import TableRow from "../../atoms/TableRow";
-import TableHead from "../../atoms/TableHead";
+import TableRow from "./TableRow";
+import TableHead from "./TableHead";
 
 const TableHeader = ({ data }) => {
   return (

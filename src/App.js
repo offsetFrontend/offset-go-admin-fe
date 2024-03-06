@@ -9,8 +9,8 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} /> 
-        <Route path="*" element={<p>Path doesn't exist</p>} />
         <Route path="/retirements" element= {<Retirements />} />
+        <Route path="*" element={<p>Path doesn't exist</p>} />
       </Routes>
     </main>
   );

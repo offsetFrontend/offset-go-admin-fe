@@ -1,5 +1,5 @@
 import React from "react";
-import CustomTable from "../components/organisms/CustomTable";
+import Table from "../components/atoms/Table";
 import Badge from "../components/atoms/Badge";
 import Button from "../components/atoms/Button";
 
@@ -88,8 +88,7 @@ const Retirements = () => {
   return (
     <div className=" h-full w-full p-6">
       <div className="text-[1.75rem] font-bold mb-4">Retirements</div>
-      <CustomTable headerData={header} data={data} />
-     
+      <Table headerData={header} data={data} />
     </div>
   );
 };
