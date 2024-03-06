@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { SideBarLabels } from '../../../utils/labels/sidebarLabels'
-import NavButton from './navButton'
+import NavButton from './NavButton'
 
 const SideBar = () => {
   const { Tabs } = SideBarLabels
