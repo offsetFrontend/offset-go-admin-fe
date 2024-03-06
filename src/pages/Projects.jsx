@@ -2,7 +2,7 @@ import React from "react";
 import CustomTable from "../components/organisms/CustomTable";
 import Button from "../components/atoms/Button";
 import Badge from "../components/atoms/Badge";
-
+import { ReactComponent as Filter } from "../assets/filter.svg";
 const Projects = () => {
   const getHeaderData = () => {
     return [
@@ -17,12 +17,29 @@ const Projects = () => {
 
   const tableData = () => {
     return [
-      ["Verra", 12, "New", <Badge varient="">Verified</Badge>,, "VERRA", <ActionButtons />],
+      [
+        "Verra",
+        12,
+        "New",
+        <StatusButton
+        statusText={"Verification"}
+        statusButton={() => {
+          handleStatusButton();
+        }}
+      />,
+        "VERRA",
+        <ActionButtons />
+      ],
       [
         "Verra",
         92,
         "New",
-        <Badge varient="">Action Required</Badge>,
+        <StatusButton
+        statusText={"Action Required"}
+        statusButton={() => {
+          handleStatusButton();
+        }}
+      />,
         "GOLD STANDARD",
         <ActionButtons />
       ]
@@ -37,7 +54,7 @@ const Projects = () => {
           varient={"primary"}
           onClick={() => onViewClick()}
           className={
-            "text-white w-[3.75rem] text-[0.5625rem] h-[1.875rem] font-medium"
+            "text-white w-[4.5rem] text-[0.5625rem] h-[1.875rem] font-medium"
           }
         >
           View
@@ -46,7 +63,7 @@ const Projects = () => {
           varient={"primary"}
           onClick={() => onActionClick()}
           className={
-            "w-[3.75rem] text-[0.5625rem] h-[1.875rem] font-medium  flex-shrink-0 rounded text-blue-800  bg-blue-500 bg-opacity-25"
+            "w-[4.5rem] text-[0.5625rem] h-[1.875rem] font-medium  flex-shrink-0 rounded text-blue-800  bg-blue-500 bg-opacity-25"
           }
         >
           Action
@@ -54,12 +71,53 @@ const Projects = () => {
       </>
     </div>
   );
+  const StatusButton = ({ statusButton, statusText }) => {
+    return (
+      <button onClick={statusButton} className="p-0 m-0">
+        <Badge varient={statusText}>
+          <div className="flex justify-center items-center w-36 text-xs h-5 ">
+            {statusText}
+          </div>
+        </Badge>
+      </button>
+    );
+  };
+  const handleStatusButton = () => {
+    console.log("status button clicked");
+  };
 
- 
   return (
-    <div className="flex   pt-4 w-full bg-white border">
-      <div className="w-full">
-        {" "}
+    <div className="flex  flex-col pt-4 w-full bg-gray-100 border">
+      <h1 className="ml-6 text-3xl font-bold"> Projects</h1>
+
+      <div className="w-full h-full pt-4 ml-6 mt-8 bg-white rounded-3xl">
+        <div className="flex justify-between pt-5 pb-12">
+          <div className="w-80 border-2 border-grey-800 rounded-lg mx-5 mb-5 ">
+            {/* <SearchBar
+                // onSearch={handleSearch}
+                variant="secondaryxl"
+                className="text-black"
+                borderColor="border-none"
+                placeholderColor="black"
+                inputBackground="white"
+                svgStrokeColor="black"
+                inputWidth="72"
+                inputHeight="8"
+              /> */}
+          </div>
+
+          <div className="mr-10 ">
+            <Button
+              className="flex justify-center items-center gap-x-2 px-2  py-2 h-fit"
+              borderColor={"gray"}
+              varient={"secondary"}
+              // onClick={handleFilterButtonClick}
+            >
+              <Filter className="w-4 h-4" />
+              <span>Filter</span>
+            </Button>
+          </div>
+        </div>
         <CustomTable headerData={getHeaderData()} data={tableData()} />
       </div>
     </div>
