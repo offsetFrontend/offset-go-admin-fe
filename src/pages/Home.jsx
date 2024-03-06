@@ -13,7 +13,7 @@ const data1 = [
   { year: 2020, value: 9 },
   { year: 2021, value: 15 },
   { year: 2022, value: 54 },
-  { year: 2023, value: 100 }
+  { year: 2023, value: 100 },
 ];
 
 const data2 = [
@@ -24,7 +24,7 @@ const data2 = [
   { year: 2020, value: 0.9 },
   { year: 2021, value: 1.5 },
   { year: 2022, value: 5.4 },
-  { year: 2023, value: 10 }
+  { year: 2023, value: 10 },
 ];
 
 const Home = () => {
