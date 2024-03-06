@@ -1,41 +1,47 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { SideBarLabels } from '../../../utils/labels/sidebarLabels'
-import NavButton from './NavButton'
+import React from "react";
+import { Link } from "react-router-dom";
+import NavButton from "./NavButton";
+import Loader from "./Loader";
+import { useSidenav } from "../../../hooks/useSidenav";
 
 const SideBar = () => {
-  const { Tabs } = SideBarLabels
+  const { loading, sidenavData } = useSidenav();
 
   return (
     <>
-      <aside className='w-[20%] h-full bg-white'>
-        <div className='h-full px-3 py-4'>
+      <aside className="w-[20%] h-full bg-white">
+        <div className="h-full px-3 py-4">
           <Link
-            to=''
-            className=' flex justify-center items-center mt-[2.375rem] mb-5 '
+            to=""
+            className=" flex justify-center items-center mt-[2.375rem] mb-12 "
           >
             <img
-              src='https://offsetgo.s3.ap-south-1.amazonaws.com/assets/Images/Offsetgo-logo.png'
-              alt='Logo'
-              className='w-20 h-16'
+              src="https://offsetgo.s3.ap-south-1.amazonaws.com/assets/Images/Offsetgo-logo.png"
+              alt="Logo"
+              className="w-20 h-16"
             />
           </Link>
-          <ul className='space-y-2 mt-10 ml-[1rem] font-medium text-gray-500 leading-5 text-xs'>
-            {Tabs.map(({ id, TabTitle, link, icon, subMenu }) => (
-              <NavButton
-                key={id}
-                id={id}
-                TabTitle={TabTitle}
-                link={link}
-                icon={icon}
-                subMenu={subMenu}
-              />
-            ))}
-          </ul>
+          {loading ? (
+            <Loader />
+          ) : (
+            <ul className="space-y-2 px-4 font-medium text-gray-500 leading-5 text-xs">
+              {sidenavData.map(
+                ({ title, redirectRoute, svgPath, subMenu }, index) => (
+                  <NavButton
+                    key={`sidenav_${index}`}
+                    TabTitle={title}
+                    link={redirectRoute}
+                    icon={svgPath}
+                    subMenu={subMenu}
+                  />
+                )
+              )}
+            </ul>
+          )}
         </div>
       </aside>
     </>
-  )
-}
+  );
+};
 
-export default SideBar
+export default SideBar;
