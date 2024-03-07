@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 import Table from "../components/atoms/Table";
 import Badge from "../components/atoms/Badge";
 import Button from "../components/atoms/Button";
+import SearchBox from "../components/atoms/SearchBox";
 
 const ActionButton = ({ viewButton }) => {
   return (
@@ -29,6 +30,7 @@ const StatusButton = ({ statusButton, statusText }) => {
 };
 
 const Retirements = () => {
+  const searchRef = useRef();
   const header = [
     "Project Name",
     "Project ID",
@@ -85,8 +87,13 @@ const Retirements = () => {
     console.log("status button clicked");
   };
 
+  const handleSearch = () => {
+    console.log(searchRef.current.value);
+  };
+
   return (
     <div className=" h-full w-full p-6">
+      <SearchBox ref={searchRef} onSearch={handleSearch} />
       <div className="text-[1.75rem] font-bold mb-4">Retirements</div>
       <Table headerData={header} data={data} />
     </div>
