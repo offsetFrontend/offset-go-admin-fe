@@ -17,7 +17,7 @@ export const useLogin = () => {
     const { success } = loginForm.safeParse({ email, password });
     if (!success) {
       toast.error("Please fill in all fields correctly");
-      return;
+      return { success: false };
     }
     setLoading(true);
     try {
