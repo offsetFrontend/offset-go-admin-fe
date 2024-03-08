@@ -63,8 +63,8 @@ const TokenHistory = () => {
       <div className="w-full h-full pt-4 mt-8 bg-white rounded-3xl">
         <div className="flex justify-between pt-5 pb-12">
           <div className="flex justify-between py-5 px-8">
-          <SearchBox ref={searchRef} onSearch={handleSearch} />
-        </div>
+            <SearchBox ref={searchRef} onSearch={handleSearch} />
+          </div>
           <div className="mr-10 ">
             <Button
               className="flex justify-center items-center gap-x-2 px-2  py-2 h-fit"
