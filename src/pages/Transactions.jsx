@@ -68,7 +68,7 @@ const Transactions = () => {
     <div className="flex  flex-col pt-4 w-full bg-gray-100 border">
       <h1 className="ml-6 text-3xl font-bold"> Transactions</h1>
 
-      <div className="w-full h-full pt-4 ml-6 mt-8 bg-white rounded-3xl">
+      <div className="w-full h-full pt-4 mt-8 bg-white rounded-3xl">
         <div className="flex justify-between pt-5 pb-12">
           <div className="w-80 border-2 border-grey-800 rounded-lg mx-5 mb-5 "></div>
 
