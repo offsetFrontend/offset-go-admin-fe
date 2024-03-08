@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Projects from "./pages/Projects"
 import Retirements from "./pages/Retirements.jsx"
+import TransferRequest from "./pages/TransferRequest.jsx"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} /> 
         <Route path="/retirements" element= {<Retirements />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/transfer-request" element= {<TransferRequest />} />
         <Route path="*" element={<p>Path doesn't exist</p>} />
       </Routes>
     </main>
