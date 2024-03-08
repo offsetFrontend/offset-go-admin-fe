@@ -4,6 +4,19 @@ import Badge from "../components/atoms/Badge";
 import { ReactComponent as Filter } from "../assets/svgs/filter.svg";
 import SearchBox from "../components/atoms/SearchBox";
 import Table from "../components/atoms/Table";
+
+const StatusButton = ({ statusButton, statusText }) => {
+  return (
+    <button onClick={statusButton} className="p-0 m-0">
+      <Badge varient={statusText}>
+        <div className="flex justify-center items-center w-36 text-xs h-5 ">
+          {statusText}
+        </div>
+      </Badge>
+    </button>
+  );
+};
+
 const Transactions = () => {
   const searchRef = useRef();
   const getHeaderData = () => {
@@ -51,17 +64,6 @@ const Transactions = () => {
     ];
   };
 
-  const StatusButton = ({ statusButton, statusText }) => {
-    return (
-      <button onClick={statusButton} className="p-0 m-0">
-        <Badge varient={statusText}>
-          <div className="flex justify-center items-center w-36 text-xs h-5 ">
-            {statusText}
-          </div>
-        </Badge>
-      </button>
-    );
-  };
   const handleStatusButton = () => {
     console.log("status button clicked");
   };
