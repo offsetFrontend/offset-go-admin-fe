@@ -3,6 +3,34 @@ import Button from "../components/atoms/Button";
 import Badge from "../components/atoms/Badge";
 import Table from "../components/atoms/Table";
 import SearchBox from "../components/atoms/SearchBox";
+
+const ActionButtons = ({ onEditClick }) => (
+  <div className="flex items-center justify-center gap-x-3 relative">
+    <>
+      <Button
+        color={"blue"}
+        varient={"primary"}
+        onClick={() => onEditClick()}
+        className={
+          "text-white w-[4.5rem] text-[0.5625rem] h-[1.875rem] font-medium"
+        }
+      >
+        Edit
+      </Button>
+    </>
+  </div>
+);
+const StatusButton = ({ statusButton, statusText }) => {
+  return (
+    <button onClick={statusButton} className="p-0 m-0">
+      <Badge varient={statusText}>
+        <div className="flex justify-center items-center w-36 text-xs h-5 ">
+          {statusText}
+        </div>
+      </Badge>
+    </button>
+  );
+};
 const TransferRequest = () => {
   const searchRef = useRef();
   const getHeaderData = () => {
@@ -52,33 +80,7 @@ const TransferRequest = () => {
     ];
   };
 
-  const ActionButtons = ({ onEditClick }) => (
-    <div className="flex items-center justify-center gap-x-3 relative">
-      <>
-        <Button
-          color={"blue"}
-          varient={"primary"}
-          onClick={() => onEditClick()}
-          className={
-            "text-white w-[4.5rem] text-[0.5625rem] h-[1.875rem] font-medium"
-          }
-        >
-          Edit
-        </Button>
-      </>
-    </div>
-  );
-  const StatusButton = ({ statusButton, statusText }) => {
-    return (
-      <button onClick={statusButton} className="p-0 m-0">
-        <Badge varient={statusText}>
-          <div className="flex justify-center items-center w-36 text-xs h-5 ">
-            {statusText}
-          </div>
-        </Badge>
-      </button>
-    );
-  };
+ 
   const handleStatusButton = () => {
     console.log("status button clicked");
   };

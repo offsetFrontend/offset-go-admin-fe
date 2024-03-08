@@ -3,6 +3,33 @@ import Button from "../components/atoms/Button";
 import Badge from "../components/atoms/Badge";
 import Table from "../components/atoms/Table";
 import SearchBox from "../components/atoms/SearchBox";
+
+const ActionButtons = ({ onViewClick, onActionClick }) => (
+  <div className="flex items-center justify-center gap-x-3 relative">
+    <>
+      <Button
+        color={"blue"}
+        varient={"primary"}
+        onClick={() => onViewClick()}
+        className={
+          "text-white w-[4.5rem] text-[0.5625rem] h-[1.875rem] font-medium"
+        }
+      >
+        View
+      </Button>
+      <Button
+        varient={"primary"}
+        onClick={() => onActionClick()}
+        className={
+          "w-[4.5rem] text-[0.5625rem] h-[1.875rem] font-medium  flex-shrink-0 rounded text-blue-800  bg-blue-500 bg-opacity-25"
+        }
+      >
+        Action
+      </Button>
+    </>
+  </div>
+);
+
 const MarketPlace = () => {
   const searchRef = useRef();
   const getHeaderData = () => {
@@ -16,31 +43,6 @@ const MarketPlace = () => {
     ];
   };
 
-  const ActionButtons = ({ onViewClick, onActionClick }) => (
-    <div className="flex items-center justify-center gap-x-3 relative">
-      <>
-        <Button
-          color={"blue"}
-          varient={"primary"}
-          onClick={() => onViewClick()}
-          className={
-            "text-white w-[4.5rem] text-[0.5625rem] h-[1.875rem] font-medium"
-          }
-        >
-          View
-        </Button>
-        <Button
-          varient={"primary"}
-          onClick={() => onActionClick()}
-          className={
-            "w-[4.5rem] text-[0.5625rem] h-[1.875rem] font-medium  flex-shrink-0 rounded text-blue-800  bg-blue-500 bg-opacity-25"
-          }
-        >
-          Action
-        </Button>
-      </>
-    </div>
-  );
   const handleSearch = () => {
     console.log(searchRef.current.value);
   };

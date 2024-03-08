@@ -3,6 +3,19 @@ import Button from "../components/atoms/Button";
 import Badge from "../components/atoms/Badge";
 import Table from "../components/atoms/Table";
 import SearchBox from "../components/atoms/SearchBox";
+
+const StatusButton = ({ statusButton, statusText }) => {
+  return (
+    <button onClick={statusButton} className="p-0 m-0 border borde red-800">
+      <Badge varient={statusText}>
+        <div className="flex justify-center text-white items-center w-12 text-xs h-5 ">
+          {statusText}
+        </div>
+      </Badge>
+    </button>
+  );
+};
+
 const TokenHistory = () => {
   const searchRef = useRef();
   const getHeaderData = () => {
@@ -37,18 +50,7 @@ const TokenHistory = () => {
       ]
     ];
   };
-
-  const StatusButton = ({ statusButton, statusText }) => {
-    return (
-      <button onClick={statusButton} className="p-0 m-0 border borde red-800">
-        <Badge varient={statusText}>
-          <div className="flex justify-center text-white items-center w-12 text-xs h-5 ">
-            {statusText}
-          </div>
-        </Badge>
-      </button>
-    );
-  };
+ 
   const handleStatusButton = () => {
     console.log("status button clicked");
   };
