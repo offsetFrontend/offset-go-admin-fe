@@ -93,9 +93,15 @@ const Retirements = () => {
 
   return (
     <div className=" h-full w-full p-6">
-      <SearchBox ref={searchRef} onSearch={handleSearch} />
       <div className="text-[1.75rem] font-bold mb-4">Retirements</div>
-      <Table headerData={header} data={data} />
+      <div className="w-full bg-white rounded-2xl shadow-formShadow pb-12 h-[calc(100vh-6rem)]">
+        <div className="flex justify-between py-5 px-8">
+          <SearchBox ref={searchRef} onSearch={handleSearch} />
+        </div>
+        <div className="pt-6">
+          <Table headerData={header} data={data} bottomLine={false} />
+        </div>
+      </div>
     </div>
   );
 };
