@@ -6,7 +6,8 @@ import { Toaster } from "react-hot-toast";
 import { useAuthContext } from "./context/AuthContext.jsx";
 import TransferRequest from "./pages/TransferRequest.jsx"
 import MarketPlace from "./pages/MarketPlace.jsx"
-import TokenHistory from "./pages/TokenHistory.jsx"import ContactUs from "./pages/ContactUs.jsx";
+import TokenHistory from "./pages/TokenHistory.jsx"
+import ContactUs from "./pages/ContactUs.jsx";
 import Inquire from "./pages/Inquire.jsx";
 import Subscription from "./pages/Subscription.jsx";
 import StaticPages from "./pages/StaticPages.jsx";
