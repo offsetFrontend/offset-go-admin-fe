@@ -27,6 +27,7 @@ const Button = ({
     lightblue: "bg-blue-200",
     blue_300: "bg-blue-300",
     gray: "bg-grey-800",
+    red: "bg-red-200",
   };
 
   return (
