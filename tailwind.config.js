@@ -16,6 +16,10 @@ module.exports = {
         },
         green: {
           400: "#3BB800",
+        },
+        red: {
+          200: "rgba(201, 2, 2, 0.2)",
+          400: "#C90202"
         }
       },
       backgroundImage: {
