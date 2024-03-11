@@ -4,6 +4,9 @@ import Login from "./pages/Login";
 import Retirements from "./pages/Retirements.jsx";
 import { Toaster } from "react-hot-toast";
 import { useAuthContext } from "./context/AuthContext.jsx";
+import TransferRequest from "./pages/TransferRequest.jsx"
+import MarketPlace from "./pages/MarketPlace.jsx"
+import TokenHistory from "./pages/TokenHistory.jsx"
 import Transactions from "./pages/Transactions.jsx"
 import ContactUs from "./pages/ContactUs.jsx";
 import Inquire from "./pages/Inquire.jsx";
@@ -27,6 +30,9 @@ function App() {
           element={authUser ? <Home /> : <Navigate to="/login" />}
         />
         <Route path="/retirements" element={<Retirements />} />
+        <Route path="/transfer-request" element= {<TransferRequest />} />
+        <Route path="/marketplace-users" element= {<MarketPlace />} />
+        <Route path="/token-history" element= {<TokenHistory />} />
         <Route path="/transactions" element= {<Transactions/>} />
         <Route path="/forms/contact-us" element={<ContactUs />} />
         <Route path="/forms/inquiry" element={<Inquire />} />
