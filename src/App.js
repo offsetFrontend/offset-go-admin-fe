@@ -7,10 +7,13 @@ import { useAuthContext } from "./context/AuthContext.jsx";
 import TransferRequest from "./pages/TransferRequest.jsx"
 import MarketPlace from "./pages/MarketPlace.jsx"
 import TokenHistory from "./pages/TokenHistory.jsx"
+import Transactions from "./pages/Transactions.jsx"
 import ContactUs from "./pages/ContactUs.jsx";
 import Inquire from "./pages/Inquire.jsx";
 import Subscription from "./pages/Subscription.jsx";
 import StaticPages from "./pages/StaticPages.jsx";
+import Roles from "./pages/Roles.jsx";
+import UserList from "./pages/UserList.jsx";
 
 function App() {
   const { authUser } = useAuthContext();
@@ -30,10 +33,13 @@ function App() {
         <Route path="/transfer-request" element= {<TransferRequest />} />
         <Route path="/marketplace-users" element= {<MarketPlace />} />
         <Route path="/token-history" element= {<TokenHistory />} />
+        <Route path="/transactions" element= {<Transactions/>} />
         <Route path="/forms/contact-us" element={<ContactUs />} />
         <Route path="/forms/inquiry" element={<Inquire />} />
         <Route path="/forms/subscription" element={<Subscription />} />
         <Route path="setting/static-pages" element={<StaticPages />} />
+        <Route path="setting/roles" element={<Roles />} />
+        <Route path="setting/users-list" element={<UserList />} />
         <Route path="*" element={<p>Path doesn't exist</p>} />
       </Routes>
       <Toaster />
