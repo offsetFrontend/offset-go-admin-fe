@@ -7,7 +7,7 @@ const Container = ({ data: { projectName, categoryType, percent, value }, index 
       <div className="w-full">
         <div className="w-full flex justify-between">
           <div>
-            <div className="text-lg font-medium">{projectName}</div>
+            <div className="text-sm font-medium">{projectName}</div>
             <div className="text-xs text-[#707B81]">{categoryType}</div>
           </div>
           <div>
