@@ -132,6 +132,7 @@ const Projects = () => {
           onCancel={handleFilterDialogClose}
           onOk={handleFilterDialogClose}
           page="Projects"
+          
         />
       )}
     </div>

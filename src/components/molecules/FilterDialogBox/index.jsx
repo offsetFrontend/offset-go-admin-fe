@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Button from "../../atoms/Button";
-import Line from "../../atoms/VerticalLine";
 import Registries from "./Registry";
 import Category from "./Category";
 import DiaglogBox from "../../atoms/DiaglogBox";
@@ -9,6 +8,7 @@ import UserType from "./UserType";
 import Status from "./Status";
 import TimePeriod from "./TimePeriod";
 import Country from "./Country";
+
 const FilterDialogBox = ({ open, onOk, onCancel, page }) => {
   const renderFilters = () => {
     switch (page) {
