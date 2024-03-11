@@ -1,26 +1,26 @@
 import React, { useState } from "react";
 import RadioGroup from "../../atoms/RadioGroup"; 
+import RegTwoSvg from "../../../assets/svgs/regtwo.svg"
+import RegThreeSvg from "../../../assets/svgs/regthree.svg"
+import RegFourSvg from "../../../assets/svgs/regfour.svg"
+import RegFiveSvg from "../../../assets/svgs/regfive.svg"
 
 const Registries = () => {
   const radioOptions = [
     {
-      label: <img className="" src="src\assets\svgs\regtwo.svg" alt="" />,
+      label: <img src={RegTwoSvg} className="mt-2" alt="Reg Two" />,
       value: "regTwo",
     },
     {
-      label: <img className="" src="src\assets\svgs\regthree.svg" alt="" />,
+      label: <img src={RegThreeSvg} className="mt-2" alt="Reg Three" />,
       value: "regThree",
     },
     {
-      label: <img className="" src="src\assets\svgs\regone.svg" alt="" />,
-      value: "regOne",
-    },
-    {
-      label: <img className="" src="src\assets\svgs\regfour.svg" alt="" />,
+      label: <img src={RegFourSvg} className="mt-2" alt="Reg Four" />,
       value: "regFour",
     },
     {
-      label: <img className="" src="src\assets\svgs\regfive.svg" alt="" />,
+      label: <img src={RegFiveSvg}  alt="Reg Five" />,
       value: "regFive",
     },
   ];

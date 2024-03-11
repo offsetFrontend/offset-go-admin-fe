@@ -3,7 +3,6 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Projects from "./pages/Projects"
 import Retirements from "./pages/Retirements.jsx"
-import Retirements from "./pages/Retirements.jsx";
 import { Toaster } from "react-hot-toast";
 import { useAuthContext } from "./context/AuthContext.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
