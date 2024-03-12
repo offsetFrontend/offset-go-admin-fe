@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import RadioGroup from "../../atoms/RadioGroup"; 
+import RadioGroup from "../../atoms/RadioGroup";
 
 const radioOptions = [
   { label: "All", value: "All" },
   { label: "Buyer", value: "Buyer" },
-  { label: "Trader", value: "Trader" },
+  { label: "Trader", value: "Trader" }
 ];
 
 const UserType = () => {
@@ -16,12 +16,11 @@ const UserType = () => {
   const [radioStates, setRadioStates] = useState(initialState);
 
   const handleRadioChange = (radioValue) => {
-    console.log("Selected Radio Option:", radioValue);
     setRadioStates((prevStates) => ({
       ...Object.keys(prevStates).reduce((acc, key) => {
         acc[key] = key === radioValue;
         return acc;
-      }, {}),
+      }, {})
     }));
   };
 
@@ -30,7 +29,7 @@ const UserType = () => {
       <RadioGroup
         options={radioOptions.map(({ label, value }) => ({
           label,
-          value,
+          value
         }))}
         onChange={(e) => handleRadioChange(e.target.value)}
       />
