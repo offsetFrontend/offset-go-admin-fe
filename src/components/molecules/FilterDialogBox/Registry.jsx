@@ -6,7 +6,7 @@ import { getAllRegistries } from "../../../utils/api/getAllRegistries";
 const Registries = () => {
   const [registries, setRegistries] = useState([]);
   const [selectedRegistry, setSelectedRegistry] = useState(null);
-  const [loading, setLoading] = useState(false); 
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchRegistries = async () => {
@@ -14,12 +14,9 @@ const Registries = () => {
       try {
         const registriesData = await getAllRegistries();
         setRegistries(registriesData);
-        setLoading(false);
       } catch (error) {
-        setLoading(true);
         console.error(error);
-      }
-      finally {
+      } finally {
         setLoading(false);
       }
     };
@@ -28,18 +25,17 @@ const Registries = () => {
 
   const handleRadioChange = (e) => {
     const selectedValue = e.target.value;
-   
+
     setSelectedRegistry(selectedValue);
   };
 
   return (
     <div className="flex flex-wrap items-center ml-3 mb-4">
-      {loading ? ( 
-       <div className="flex flex-col gap-y-4 w-full">
-       <Skeleton.Button block={true} active={true} />
-       <Skeleton.Button block={true} active={true} />
-     
-     </div>
+      {loading ? (
+        <div className="flex flex-col gap-y-4 w-full">
+          <Skeleton.Button block={true} active={true} />
+          <Skeleton.Button block={true} active={true} />
+        </div>
       ) : (
         <RadioGroup
           options={registries.map((registry) => ({
@@ -50,11 +46,11 @@ const Registries = () => {
                   background: `url(${registry.image})`,
                   backgroundSize: "contain",
                   backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center",
+                  backgroundPosition: "center"
                 }}
               ></div>
             ),
-            value: registry.registryName,
+            value: registry.registryName
           }))}
           onChange={handleRadioChange}
           value={selectedRegistry}

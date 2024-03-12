@@ -12,10 +12,6 @@ const TimePeriod = ({ onChange }) => {
     setEndDate(event.target.value);
   };
 
-  const handleSubmit = () => {
-    onChange({ startDate, endDate });
-  };
-
   return (
     <div className="ml-3 mb-6 flex items-center text-grey-800">
       <div className="mr-4 flex flex-col text-gray-400">
@@ -38,7 +34,6 @@ const TimePeriod = ({ onChange }) => {
           onChange={handleEndDateChange}
         />
       </div>
-      
     </div>
   );
 };

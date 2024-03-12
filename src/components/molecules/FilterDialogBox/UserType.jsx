@@ -13,7 +13,7 @@ const UserType = () => {
     return acc;
   }, {});
 
-  const [radioStates, setRadioStates] = useState(initialState);
+  const [_, setRadioStates] = useState(initialState);
 
   const handleRadioChange = (radioValue) => {
     setRadioStates((prevStates) => ({

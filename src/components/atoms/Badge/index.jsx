@@ -36,7 +36,6 @@ const Badge = ({ children, varient }) => {
     >
       <div className={` capitalize ${background_style[varient.toLowerCase()]}`}>
         {children}
-        {/* </div> */}
       </div>
     </div>
   );

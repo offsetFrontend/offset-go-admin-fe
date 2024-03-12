@@ -12,7 +12,7 @@ const ProjectType = () => {
     return acc;
   }, {});
 
-  const [radioStates, setRadioStates] = useState(initialState);
+  const [_, setRadioStates] = useState(initialState);
 
   const handleRadioChange = (radioValue) => {
     setRadioStates((prevStates) => ({
@@ -22,7 +22,6 @@ const ProjectType = () => {
       }, {})
     }));
   };
-
   return (
     <div className="flex w-full gap-8 ml-3 mb-4">
       <RadioGroup
