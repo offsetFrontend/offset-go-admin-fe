@@ -15,7 +15,6 @@ const CreditType = () => {
   const [radioStates, setRadioStates] = useState(initialState);
 
   const handleRadioChange = (radioValue) => {
-    console.log("Selected Radio Option:", radioValue);
     setRadioStates((prevStates) => ({
       ...Object.keys(prevStates).reduce((acc, key) => {
         acc[key] = key === radioValue;

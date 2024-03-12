@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import RadioGroup from "../../atoms/RadioGroup"; 
+import RadioGroup from "../../atoms/RadioGroup";
 
 const radioOptions = [
   { label: "New", value: "New" },
-  { label: "Existing", value: "Existing" },
+  { label: "Existing", value: "Existing" }
 ];
 
 const ProjectType = () => {
@@ -15,12 +15,11 @@ const ProjectType = () => {
   const [radioStates, setRadioStates] = useState(initialState);
 
   const handleRadioChange = (radioValue) => {
-    console.log("Selected Radio Option:", radioValue);
     setRadioStates((prevStates) => ({
       ...Object.keys(prevStates).reduce((acc, key) => {
         acc[key] = key === radioValue;
         return acc;
-      }, {}),
+      }, {})
     }));
   };
 
@@ -29,7 +28,7 @@ const ProjectType = () => {
       <RadioGroup
         options={radioOptions.map(({ label, value }) => ({
           label,
-          value,
+          value
         }))}
         onChange={(e) => handleRadioChange(e.target.value)}
       />

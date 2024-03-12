@@ -1,56 +1,61 @@
-import React, { useState } from "react";
-import RadioGroup from "../../atoms/RadioGroup"; 
-import RegTwoSvg from "../../../assets/svgs/regtwo.svg"
-import RegThreeSvg from "../../../assets/svgs/regthree.svg"
-import RegFourSvg from "../../../assets/svgs/regfour.svg"
-import RegFiveSvg from "../../../assets/svgs/regfive.svg"
+import React, { useState, useEffect } from "react";
+import RadioGroup from "../../atoms/RadioGroup";
+import { Skeleton } from "antd";
+import { getAllRegistries } from "../../../utils/api/getAllRegistries";
 
 const Registries = () => {
-  const radioOptions = [
-    {
-      label: <img src={RegTwoSvg} className="mt-2" alt="Reg Two" />,
-      value: "regTwo",
-    },
-    {
-      label: <img src={RegThreeSvg} className="mt-2" alt="Reg Three" />,
-      value: "regThree",
-    },
-    {
-      label: <img src={RegFourSvg} className="mt-2" alt="Reg Four" />,
-      value: "regFour",
-    },
-    {
-      label: <img src={RegFiveSvg}  alt="Reg Five" />,
-      value: "regFive",
-    },
-  ];
+  const [registries, setRegistries] = useState([]);
+  const [selectedRegistry, setSelectedRegistry] = useState(null);
+  const [loading, setLoading] = useState(true); 
 
-  const initialState = radioOptions.reduce((acc, { value }) => {
-    acc[value] = false;
-    return acc;
-  }, {});
+  useEffect(() => {
+    const fetchRegistries = async () => {
+      try {
+        const registriesData = await getAllRegistries();
+        setRegistries(registriesData);
+        setLoading(false);
+      } catch (error) {
+        error("Error fetching registries:", error);
+      }
+    };
 
-  const [radioStates, setRadioStates] = useState(initialState);
+    fetchRegistries();
+  }, []);
 
-  const handleRadioChange = (radioValue) => {
-    console.log("Selected Radio Option:", radioValue);
-    setRadioStates((prevStates) => ({
-      ...Object.keys(prevStates).reduce((acc, key) => {
-        acc[key] = key === radioValue;
-        return acc;
-      }, {}),
-    }));
+  const handleRadioChange = (e) => {
+    const selectedValue = e.target.value;
+   
+    setSelectedRegistry(selectedValue);
   };
 
   return (
-    <div className="flex gap-8 ml-3 mb-4">
-      <RadioGroup
-        options={radioOptions.map(({ label, value }) => ({
-          label,
-          value,
-        }))}
-        onChange={(e) => handleRadioChange(e.target.value)}
-      />
+    <div className="flex flex-wrap items-center ml-3 mb-4">
+      {loading ? ( 
+       <div className="flex flex-col gap-y-4 w-full">
+       <Skeleton.Button block={true} active={true} />
+       <Skeleton.Button block={true} active={true} />
+     
+     </div>
+      ) : (
+        <RadioGroup
+          options={registries.map((registry) => ({
+            label: (
+              <div
+                className="w-16 h-8 bg-cover mt-2"
+                style={{
+                  background: `url(${registry.image})`,
+                  backgroundSize: "contain",
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "center",
+                }}
+              ></div>
+            ),
+            value: registry.registryName,
+          }))}
+          onChange={handleRadioChange}
+          value={selectedRegistry}
+        />
+      )}
     </div>
   );
 };

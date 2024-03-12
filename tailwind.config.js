@@ -26,7 +26,6 @@ module.exports = {
         "gold-gradient": "linear-gradient(to right, #FFE36D, #F4AA26)",
         "silver-gradient": "linear-gradient(to right, #A1A0A5, #797783)",
         "bronze-gradient": "linear-gradient(to right, #F2B575, #C17526)",
-        "green-gradient":"linear-gradient(to right, #7FFF7F, #00FF00)",
       },
     },
   },

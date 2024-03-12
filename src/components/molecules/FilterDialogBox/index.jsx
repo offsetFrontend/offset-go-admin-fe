@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "../../atoms/Button";
 import Registries from "./Registry";
 import Category from "./Category";
@@ -9,41 +9,22 @@ import Status from "./Status";
 import TimePeriod from "./TimePeriod";
 import Country from "./Country";
 
-const FilterDialogBox = ({ open, onOk, onCancel, page }) => {
-  const renderFilters = () => {
-    switch (page) {
-      case "Projects":
-        return (
-          <>
-            <h1 className="py-2 ml-3 text-xs font-normal text-grey-800">
-              Registries
-            </h1>
-            <Registries />
-            <hr />
-            <div className="flex gap-8">
-              <div className="flex w-full flex-col">
-                <h2 className="py-4 ml-3 text-xs font-normal text-grey-800">
-                  ProjectType
-                </h2>
-                <ProjectType />
-              </div>
-              <div className="flex w-full flex-col">
-                <h2 className="py-4 ml-3 text-xs font-normal text-grey-800">
-                  Status
-                </h2>
-                <Status />
-              </div>
-            </div>
-          </>
-        );
-      case "Retirements":
-        return (
-          <>
-            <div className="flex w-1/2 flex-col">
+const renderFilters = (page) => {
+  switch (page) {
+    case "Projects":
+      return (
+        <>
+          <h1 className="py-2 ml-3 text-xs font-normal text-grey-800">
+            Registries
+          </h1>
+          <Registries />
+          <hr />
+          <div className="flex gap-8">
+            <div className="flex w-full flex-col">
               <h2 className="py-4 ml-3 text-xs font-normal text-grey-800">
-                Category
+                ProjectType
               </h2>
-              <Category />
+              <ProjectType />
             </div>
             <div className="flex w-full flex-col">
               <h2 className="py-4 ml-3 text-xs font-normal text-grey-800">
@@ -51,76 +32,95 @@ const FilterDialogBox = ({ open, onOk, onCancel, page }) => {
               </h2>
               <Status />
             </div>
-          </>
-        );
-      case "TransferRequest":
-        return (
-          <>
+          </div>
+        </>
+      );
+    case "Retirements":
+      return (
+        <>
+          <div className="flex w-1/2 flex-col">
+            <h2 className="py-4 ml-3 text-xs font-normal text-grey-800">
+              Category
+            </h2>
+            <Category />
+          </div>
+          <div className="flex w-full flex-col">
+            <h2 className="py-4 ml-3 text-xs font-normal text-grey-800">
+              Status
+            </h2>
+            <Status />
+          </div>
+        </>
+      );
+    case "TransferRequest":
+      return (
+        <>
+          <h1 className="py-2 ml-3 text-xs font-normal text-grey-800">
+            UserType
+          </h1>
+          <UserType />
+          <hr />
+          <div className="flex w-1/2 flex-col">
+            <h2 className="py-4 ml-3 text-xs font-normal text-grey-800">
+              Status
+            </h2>
+            <Status />
+          </div>
+          <hr />
+        </>
+      );
+    case "ContactUs":
+      return (
+        <>
+          <h1 className="py-2 ml-3 text-xs font-normal text-gray-400">
+            Time Period
+          </h1>
+          <TimePeriod />
+          <hr />
+          <div className="flex w-1/2 flex-col">
+            <h2 className="py-4 ml-3 text-xs font-normal text-gray-400">
+              Country
+            </h2>
+            <Country />
+          </div>
+          <hr />
+        </>
+      );
+
+    case "Inquire":
+      return (
+        <>
+          <h1 className="py-2 ml-3 text-xs font-normal text-gray-400">
+            Time Period
+          </h1>
+          <TimePeriod />
+          <hr />
+          <div className="flex w-1/2 flex-col">
             <h1 className="py-2 ml-3 text-xs font-normal text-grey-800">
               UserType
             </h1>
             <UserType />
             <hr />
-            <div className="flex w-1/2 flex-col">
-              <h2 className="py-4 ml-3 text-xs font-normal text-grey-800">
-                Status
-              </h2>
-              <Status />
-            </div>
-            <hr />
-          </>
-        );
-      case "ContactUs":
-        return (
-          <>
-            <h1 className="py-2 ml-3 text-xs font-normal text-gray-400">
-              Time Period
-            </h1>
-            <TimePeriod />
-            <hr />
-            <div className="flex w-1/2 flex-col">
-              <h2 className="py-4 ml-3 text-xs font-normal text-gray-400">
-                Country
-              </h2>
-              <Country />
-            </div>
-            <hr />
-          </>
-        );
+          </div>
+        </>
+      );
+    case "Subscription":
+      return (
+        <>
+          <h1 className="py-2 ml-3 text-xs font-normal text-gray-400">
+            Time Period
+          </h1>
+          <TimePeriod />
+          <hr />
+        </>
+      );
 
-      case "Inquire":
-        return (
-          <>
-            <h1 className="py-2 ml-3 text-xs font-normal text-gray-400">
-              Time Period
-            </h1>
-            <TimePeriod />
-            <hr />
-            <div className="flex w-1/2 flex-col">
-              <h1 className="py-2 ml-3 text-xs font-normal text-grey-800">
-                UserType
-              </h1>
-              <UserType />
-              <hr />
-            </div>
-          </>
-        );
-      case "Subscription":
-        return (
-          <>
-            <h1 className="py-2 ml-3 text-xs font-normal text-gray-400">
-              Time Period
-            </h1>
-            <TimePeriod />
-            <hr />
-          </>
-        );
+    default:
+      return null;
+  }
+};
 
-      default:
-        return null;
-    }
-  };
-
+const FilterDialogBox = ({ open, onOk, onCancel, page }) => {
   return (
     <>
       <div>
@@ -130,7 +130,7 @@ const FilterDialogBox = ({ open, onOk, onCancel, page }) => {
               Filter
             </h1>
             <hr />
-            {renderFilters()}
+            {renderFilters(page)}
             <div className="flex mb-4 mt-4 ">
               <Button
                 varient="primary"

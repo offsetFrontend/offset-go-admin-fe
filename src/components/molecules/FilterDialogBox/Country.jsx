@@ -1,25 +1,31 @@
 import React, { useState } from "react";
+import { Country as CountryStateCity } from 'country-state-city'; 
 
-const Country = () => {
-  const [selectedCategory, setSelectedCategory] = useState();
+const CountrySelect = (props) => { 
+  const [selectedCountry, setSelectedCountry] = useState();
 
-  const handleCategoryChange = (event) => {
-    setSelectedCategory(event.target.value);
+  const handleCountryChange = (event) => {
+    setSelectedCountry(event.target.value);
+    props.onCountryChange(event.target.value);
   };
+
   return (
-    <div className="pb-2 mb-6 w-full">
+    <div className="pb-2  ml-3 mb-2">
       <select
         id="category"
-        value={selectedCategory}
-        onChange={handleCategoryChange}
-        className="bg-white w-full text-xs text-grey-800 py-1 pl-3 leading-normal font-normal border border-gray-300 rounded-lg "
+        value={selectedCountry}
+        onChange={handleCountryChange}
+        className="bg-white w-1/2 text-xs text-grey-800 py-1 pl-3 leading-normal font-normal border border-gray-300 rounded-lg "
       >
-        <option value="">Select Country </option>
-        <option value="category1">Category 1</option>
-        <option value="category2">Category 2</option>
-        <option value="category3">Category 3</option>
+        <option value=''>Select Country</option>
+        {CountryStateCity.getAllCountries().map((country, index) => (
+          <option key={index} value={country.name}>
+            {country.name}
+          </option>
+        ))}
       </select>
     </div>
   );
 };
-export default Country;
+
+export default CountrySelect;

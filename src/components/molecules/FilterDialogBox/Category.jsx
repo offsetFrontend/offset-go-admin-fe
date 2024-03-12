@@ -1,25 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { getAllCategories } from "../../../utils/api/getAllCategories";
 
-const Category = () => {
-  const [selectedCategory, setSelectedCategory] = useState();
+const Category = (props) => {
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const categories = await getAllCategories();
+        setCategories(categories);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
+
+    fetchCategories();
+  }, []);
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
+   
+    props.onCategoryChange(event.target.value);
   };
+
   return (
-    <div className="pb-2 w-full mb-2">
+    <div className="pb-2 ml-3 mb-2">
       <select
         id="category"
         value={selectedCategory}
         onChange={handleCategoryChange}
-        className="bg-white w-full text-xs text-grey-800 py-1 pl-3 leading-normal font-normal border border-gray-300 rounded-lg "
+        className="bg-white w-full text-xs text-grey-800 py-1 pl-3 leading-normal font-normal border border-gray-300 rounded-lg"
       >
-        <option value="">Select the category </option>
-        <option value="category1">Category 1</option>
-        <option value="category2">Category 2</option>
-        <option value="category3">Category 3</option>
+        <option value="">Select the category</option>
+        {categories.map((category) => (
+          <option key={category._id} value={category._id}>
+            {category.name}
+          </option>
+        ))}
       </select>
     </div>
   );
 };
+
 export default Category;
