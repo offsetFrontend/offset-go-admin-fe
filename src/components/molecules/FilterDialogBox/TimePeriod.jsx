@@ -38,7 +38,7 @@ const TimePeriod = ({ onChange }) => {
           onChange={handleEndDateChange}
         />
       </div>
-      {/* <button onClick={handleSubmit}>Apply</button> */}
+      
     </div>
   );
 };

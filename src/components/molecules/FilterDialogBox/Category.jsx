@@ -11,7 +11,7 @@ const Category = (props) => {
         const categories = await getAllCategories();
         setCategories(categories);
       } catch (error) {
-        console.error("Error fetching categories:", error);
+        error("Error fetching categories:", error);
       }
     };
 
