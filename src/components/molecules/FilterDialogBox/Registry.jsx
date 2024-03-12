@@ -6,19 +6,23 @@ import { getAllRegistries } from "../../../utils/api/getAllRegistries";
 const Registries = () => {
   const [registries, setRegistries] = useState([]);
   const [selectedRegistry, setSelectedRegistry] = useState(null);
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(false); 
 
   useEffect(() => {
     const fetchRegistries = async () => {
+      setLoading(true);
       try {
         const registriesData = await getAllRegistries();
         setRegistries(registriesData);
         setLoading(false);
       } catch (error) {
-        error("Error fetching registries:", error);
+        setLoading(true);
+        console.error(error);
+      }
+      finally {
+        setLoading(false);
       }
     };
-
     fetchRegistries();
   }, []);
 
