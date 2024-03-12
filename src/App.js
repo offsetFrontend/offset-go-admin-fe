@@ -14,6 +14,7 @@ import Subscription from "./pages/Subscription.jsx";
 import StaticPages from "./pages/StaticPages.jsx";
 import Roles from "./pages/Roles.jsx";
 import UserList from "./pages/UserList.jsx";
+import Projects from "./pages/Projects"
 
 function App() {
   const { authUser } = useAuthContext();
@@ -29,6 +30,7 @@ function App() {
           path="/"
           element={authUser ? <Home /> : <Navigate to="/login" />}
         />
+         <Route path="/projects" element={<Projects />} />
         <Route path="/retirements" element={<Retirements />} />
         <Route path="/transfer-request" element= {<TransferRequest />} />
         <Route path="/marketplace-users" element= {<MarketPlace />} />
