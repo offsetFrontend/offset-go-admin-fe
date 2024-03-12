@@ -1,5 +1,4 @@
 import React from "react";
-import SideBar from "../components/organisms/SideBar";
 import HomeChart from "../components/molecules/HomeChart";
 import HomeTokenCard from "../components/molecules/HomeTokenCard";
 import Sidewall from "../components/molecules/Sidewall";
@@ -30,8 +29,6 @@ const data2 = [
 const Home = () => {
   return (
     <div className="flex gap-x-4 px-4 pt-4 w-full">
-      <SideBar />
-
       <div className="w-[55%]">
         <div className="flex gap-x-4 mb-4">
           <HomeTokenCard tokenName={"gold"} value={16000} delta={"+12%"} />
