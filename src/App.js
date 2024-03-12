@@ -19,7 +19,7 @@ import StaticPages from "./pages/StaticPages.jsx";
 import Roles from "./pages/Roles.jsx";
 import UserList from "./pages/UserList.jsx";
 import Root from "./pages/Root.jsx";
-
+import Projects from "./pages/Projects"
 function App() {
   const { authUser } = useAuthContext();
   const router = createBrowserRouter([
@@ -29,6 +29,7 @@ function App() {
       element: authUser ? <Root /> : <Navigate to="/login" />,
       children: [
         { index: true, element: <Home /> },
+        { path:"/projects", element:<Projects />},
         { path: "transactions", element: <Transactions /> },
         { path: "retirements", element: <Retirements /> },
         { path: "/transfer-requests", element: <TransferRequest /> },
