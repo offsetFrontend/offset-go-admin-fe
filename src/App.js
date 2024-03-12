@@ -1,47 +1,51 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Retirements from "./pages/Retirements.jsx";
 import { Toaster } from "react-hot-toast";
 import { useAuthContext } from "./context/AuthContext.jsx";
-import TransferRequest from "./pages/TransferRequest.jsx"
-import MarketPlace from "./pages/MarketPlace.jsx"
-import TokenHistory from "./pages/TokenHistory.jsx"
-import Transactions from "./pages/Transactions.jsx"
+import TransferRequest from "./pages/TransferRequest.jsx";
+import MarketPlace from "./pages/MarketPlace.jsx";
+import TokenHistory from "./pages/TokenHistory.jsx";
+import Transactions from "./pages/Transactions.jsx";
 import ContactUs from "./pages/ContactUs.jsx";
 import Inquire from "./pages/Inquire.jsx";
 import Subscription from "./pages/Subscription.jsx";
 import StaticPages from "./pages/StaticPages.jsx";
 import Roles from "./pages/Roles.jsx";
 import UserList from "./pages/UserList.jsx";
+import Root from "./pages/Root.jsx";
 
 function App() {
   const { authUser } = useAuthContext();
-  console.log(authUser);
+  const router = createBrowserRouter([
+    { path: "/login", element: authUser ? <Navigate to="/" /> : <Login /> },
+    {
+      path: "/",
+      element: authUser ? <Root /> : <Navigate to="/login" />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: "transactions", element: <Transactions /> },
+        { path: "retirements", element: <Retirements /> },
+        { path: "/transfer-requests", element: <TransferRequest /> },
+        { path: "forms/contact-us", element: <ContactUs /> },
+        { path: "forms/inquire", element: <Inquire /> },
+        { path: "forms/subscription", element: <Subscription /> },
+        { path: "marketplace-users", element: <MarketPlace /> },
+        { path: "token-history", element: <TokenHistory /> },
+        { path: "setting/static-pages", element: <StaticPages /> },
+        { path: "setting/roles", element: <Roles /> },
+        { path: "setting/users", element: <UserList /> },
+      ],
+    },
+  ]);
   return (
     <main className="font-spaceGrotesk bg-[#F4F6FA] min-h-screen flex max-w-screen-2xl mx-auto">
-      <Routes>
-        <Route
-          path="/login"
-          element={authUser ? <Navigate to="/" /> : <Login />}
-        />
-        <Route
-          path="/"
-          element={authUser ? <Home /> : <Navigate to="/login" />}
-        />
-        <Route path="/retirements" element={<Retirements />} />
-        <Route path="/transfer-request" element= {<TransferRequest />} />
-        <Route path="/marketplace-users" element= {<MarketPlace />} />
-        <Route path="/token-history" element= {<TokenHistory />} />
-        <Route path="/transactions" element= {<Transactions/>} />
-        <Route path="/forms/contact-us" element={<ContactUs />} />
-        <Route path="/forms/inquiry" element={<Inquire />} />
-        <Route path="/forms/subscription" element={<Subscription />} />
-        <Route path="setting/static-pages" element={<StaticPages />} />
-        <Route path="setting/roles" element={<Roles />} />
-        <Route path="setting/users-list" element={<UserList />} />
-        <Route path="*" element={<p>Path doesn't exist</p>} />
-      </Routes>
+      <RouterProvider router={router} />
       <Toaster />
     </main>
   );
