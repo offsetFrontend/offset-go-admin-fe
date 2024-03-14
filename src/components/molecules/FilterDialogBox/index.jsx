@@ -14,39 +14,40 @@ const renderFilters = (page) => {
     case "Projects":
       return (
         <>
-          <h1 className="py-2 ml-3 text-xs font-normal text-gray-800">
+          <h1 className="py-2 mt-3 ml-3 text-xs font-normal text-gray-900">
             Registries
           </h1>
           <Registries />
           <hr />
           <div className="flex gap-8">
             <div className="flex w-full flex-col">
-              <h2 className="py-4 ml-3 text-xs font-normal text-gray-800">
+              <h2 className="py-4 ml-3 text-xs font-normal text-gray-900">
                 ProjectType
               </h2>
               <ProjectType />
             </div>
             <div className="flex w-full flex-col">
-              <h2 className="py-4 ml-3 text-xs font-normal text-gray-800">
+              <h2 className="py-4 ml-3 text-xs font-normal text-gray-900">
                 Status
               </h2>
               <Status />
             </div>
           </div>
+          <hr />
         </>
       );
     case "Retirements":
       return (
         <>
           <div className="flex w-1/2 flex-col">
-            <h2 className="py-4 ml-3 text-xs font-normal text-gray-800">
+            <h2 className="py-4 ml-3 text-xs font-normal text-gray-900">
               Category
             </h2>
             <Category />
           </div>
           <hr />
           <div className="flex w-full flex-col">
-            <h2 className="py-4 ml-3 text-xs font-normal text-gray-800">
+            <h2 className="py-4 ml-3 text-xs font-normal text-gray-900">
               Status
             </h2>
             <Status />
@@ -56,13 +57,13 @@ const renderFilters = (page) => {
     case "TransferRequest":
       return (
         <>
-          <h1 className="py-2 ml-3 text-xs font-normal text-gray-800">
+          <h1 className="py-2 ml-3 text-xs font-normal text-gray-900">
             UserType
           </h1>
           <UserType />
           <hr />
           <div className="flex w-1/2 flex-col">
-            <h2 className="py-4 ml-3 text-xs font-normal text-gray-800">
+            <h2 className="py-4 ml-3 text-xs font-normal text-gray-900">
               Status
             </h2>
             <Status />
@@ -73,13 +74,13 @@ const renderFilters = (page) => {
     case "ContactUs":
       return (
         <>
-          <h1 className="py-2 ml-3 text-xs font-normal text-gray-400">
+          <h1 className="py-2 ml-3 text-xs font-normal text-gray-900">
             Time Period
           </h1>
           <TimePeriod />
           <hr />
           <div className="flex w-1/2 flex-col">
-            <h2 className="py-4 ml-3 text-xs font-normal text-gray-400">
+            <h2 className="py-4 ml-3 text-xs font-normal text-gray-900">
               Country
             </h2>
             <Country />
@@ -91,13 +92,13 @@ const renderFilters = (page) => {
     case "Inquire":
       return (
         <>
-          <h1 className="py-2 ml-3 text-xs font-normal text-gray-400">
+          <h1 className="py-2 ml-3 text-xs font-normal text-gray-900">
             Time Period
           </h1>
           <TimePeriod />
           <hr />
           <div className="flex w-1/2 flex-col">
-            <h1 className="py-2 ml-3 text-xs font-normal text-gray-800">
+            <h1 className="py-2 ml-3 text-xs font-normal text-gray-900">
               UserType
             </h1>
             <UserType />
@@ -108,7 +109,7 @@ const renderFilters = (page) => {
     case "Subscription":
       return (
         <>
-          <h1 className="py-2 ml-3 text-xs font-normal text-gray-400">
+          <h1 className="py-2 ml-3 text-xs font-normal text-gray-900">
             Time Period
           </h1>
           <TimePeriod />
@@ -130,19 +131,19 @@ const FilterDialogBox = ({ open, onOk, onCancel, page }) => {
         </h1>
         <hr />
         {renderFilters(page)}
-        <div className="flex mb-4 mt-4 ">
+        <div className="flex mx-3 mb-4 mt-4 ">
           <Button
             varient="primary"
             borderColor="black"
             color="blue"
-            className="w-1/2 text-sm justify-center mr-4 px-6 py-2 text-white"
+            className="w-1/2 text-base justify-center mr-4 px-6 py-2 text-white"
             onClick={onOk}
           >
             Submit
           </Button>
           <Button
             varient="primary"
-            className="w-1/2 text-sm justify-center px-6 py-2 text-blue-800 bg-blue-200"
+            className="w-1/2 text-base justify-center px-6 py-2 text-blue-800 bg-blue-200"
             onClick={onCancel}
           >
             Cancel
