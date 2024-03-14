@@ -38,12 +38,13 @@ const renderFilters = (page) => {
     case "Retirements":
       return (
         <>
-          <div className="flex w-1/2 flex-col">
+          <div className="flex w-full flex-col">
             <h2 className="py-4 ml-3 text-xs font-normal text-grey-800">
               Category
             </h2>
             <Category />
           </div>
+          <hr />
           <div className="flex w-full flex-col">
             <h2 className="py-4 ml-3 text-xs font-normal text-grey-800">
               Status

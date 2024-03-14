@@ -12,7 +12,7 @@ const Status = () => {
         id="Status"
         value={selectedStatus}
         onChange={handleStatusChange}
-        className="bg-white w-full text-xs text-gray-800 py-1 pl-3 leading-normal font-normal border border-gray-300 rounded-lg focus:border-gray-300 focus:outline-none focus:ring-0"
+        className="bg-white w-1/2 text-xs text-gray-800 py-1 ml-3 pl-3 leading-normal font-normal border border-gray-300 rounded-lg focus:border-gray-300 focus:outline-none focus:ring-0"
       >
         <option value="">Select Status </option>
         <option value="Status1">Verification</option>
