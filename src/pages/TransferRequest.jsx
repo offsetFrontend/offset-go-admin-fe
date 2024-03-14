@@ -5,7 +5,7 @@ import { ReactComponent as Filter } from "../assets/svgs/filter.svg";
 import Table from "../components/atoms/Table";
 import FilterDialogBox from "../components/molecules/FilterDialogBox";
 import SearchBox from "../components/atoms/SearchBox";
-import Pagination from "../components/atoms/Pagination"; 
+import Pagination from "../components/atoms/Pagination";
 
 const ActionButtons = ({ onEditClick }) => (
   <div className="flex items-center justify-center gap-x-3 relative">
@@ -39,8 +39,8 @@ const StatusButton = ({ statusButton, statusText }) => {
 const TransferRequest = () => {
   const searchRef = useRef();
   const [isFilterDialogOpen, setFilterDialogOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1); 
-  const itemsPerPage = 8; 
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 8;
 
   const getHeaderData = () => {
     return [
@@ -55,7 +55,6 @@ const TransferRequest = () => {
   };
 
   const tableData = () => {
-   
     const data = [
       [
         "Lorem Ipsum",
@@ -84,8 +83,7 @@ const TransferRequest = () => {
           }}
         />,
         <ActionButtons />
-      ],
-      
+      ]
     ];
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
@@ -109,18 +107,18 @@ const TransferRequest = () => {
   };
 
   const handleNextPage = () => {
-    const totalItems = tableData().length; 
+    const totalItems = tableData().length;
     if (totalItems === itemsPerPage) {
-      setCurrentPage(prevPage => prevPage + 1);
+      setCurrentPage((prevPage) => prevPage + 1);
     }
   };
 
   const handlePrevPage = () => {
-    setCurrentPage(prevPage => Math.max(prevPage - 1, 1));
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
   };
 
   return (
-    <div className="flex h-full flex-col p-6 pl-3 w-full bg-gray-100 border">
+    <div className="flex h-full flex-col p-6 pl-3 w-full bg-gray-100 ">
       <h1 className="ml-6 text-3xl font-bold"> Transfer Request</h1>
 
       <div className="w-full mt-8 h-[calc(90vh-3rem)] bg-white rounded-3xl shadow-formShadow">
