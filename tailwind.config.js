@@ -19,8 +19,16 @@ module.exports = {
         },
         red: {
           200: "rgba(201, 2, 2, 0.2)",
-          400: "#C90202"
-        }
+          400: "#C90202",
+        },
+        gray: {
+          50: "#465257",
+          100: "#F4F6FA",
+          200: "#E8E8E8",
+          300: "#E1E1E1",
+          500: "#878787",
+          800: "rgba(128,128,128,0.5)",
+        },
       },
       backgroundImage: {
         "gold-gradient": "linear-gradient(to right, #FFE36D, #F4AA26)",

@@ -1,11 +1,12 @@
-import React, { useRef,useState } from "react";
+import React, { useRef, useState } from "react";
 import Table from "../components/atoms/Table";
 import Badge from "../components/atoms/Badge";
 import Button from "../components/atoms/Button";
 import SearchBox from "../components/atoms/SearchBox";
 import Pagination from "../components/atoms/Pagination";
-import { ReactComponent as Filter } from "../assets/svgs/filter.svg";
+import FilterButton from "../components/atoms/Button/FilterButton";
 import FilterDialogBox from "../components/molecules/FilterDialogBox";
+
 const ActionButton = ({ viewButton }) => {
   return (
     <Button
@@ -34,8 +35,6 @@ const StatusButton = ({ statusButton, statusText }) => {
 const Retirements = () => {
   const searchRef = useRef();
   const [isFilterDialogOpen, setFilterDialogOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 8;
 
   const header = [
     "Project Name",
@@ -46,8 +45,7 @@ const Retirements = () => {
     "Status",
     "Action",
   ];
-  const tableData = () => {
-  const data = [
+  const tableData = [
     [
       "Forestry",
       "OG 001",
@@ -85,10 +83,6 @@ const Retirements = () => {
       />,
     ],
   ];
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  return data.slice(startIndex, endIndex);
-};
 
   const handleViewButton = () => {
     console.log("View Button Clicked");
@@ -101,23 +95,6 @@ const Retirements = () => {
   const handleSearch = () => {
     console.log(searchRef.current.value);
   };
-  const handleFilterButtonClick = () => {
-    setFilterDialogOpen(true);
-  };
-
-  const handleFilterDialogClose = () => {
-    setFilterDialogOpen(false);
-  };
-
-  const handleNextPage = () => {
-    const totalItems = tableData().length;
-    if (totalItems === itemsPerPage) {
-      setCurrentPage((prevPage) => prevPage + 1);
-    }
-  };
-  const handlePrevPage = () => {
-    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
-  };
 
   return (
     <div className=" h-full w-full p-6">
@@ -128,32 +105,20 @@ const Retirements = () => {
             <SearchBox ref={searchRef} onSearch={handleSearch} />
           </div>
           <div className="pr-7 ">
-            <Button
-              className="flex justify-center items-center gap-x-2 px-2  py-1 h-fit"
-              borderColor={"gray"}
-              varient={"secondary"}
-              onClick={handleFilterButtonClick}
-            >
-              <Filter className="w-4 h-4" />
-              <span>Filter</span>
-            </Button>
+            <FilterButton onClick={() => setFilterDialogOpen(true)} />
           </div>
         </div>
-          <Table headerData={header} data={tableData()} bottomLine={false} />
-          <div className="absolute bottom-4 left-8 right-0 ">
-          <Pagination
-            currPage={currentPage}
-            onNext={handleNextPage}
-            onPrev={handlePrevPage}
-          />
+        <Table headerData={header} data={tableData} bottomLine={false} />
+        <div className="absolute bottom-16 left-48 right-0">
+          <Pagination currPage={1} onNext={() => {}} onPrev={() => {}} />
         </div>
       </div>
 
       {isFilterDialogOpen && (
         <FilterDialogBox
           open={isFilterDialogOpen}
-          onCancel={handleFilterDialogClose}
-          onOk={handleFilterDialogClose}
+          onCancel={() => setFilterDialogOpen(false)}
+          onOk={() => setFilterDialogOpen(false)}
           page="Retirements"
         />
       )}
