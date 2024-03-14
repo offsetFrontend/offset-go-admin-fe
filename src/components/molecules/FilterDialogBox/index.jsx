@@ -131,19 +131,19 @@ const FilterDialogBox = ({ open, onOk, onCancel, page }) => {
             </h1>
             <hr />
             {renderFilters(page)}
-            <div className="flex mb-4 mt-4 ">
+            <div className="flex mb-4 mt-4 mx-2 ">
               <Button
                 varient="primary"
                 borderColor="black"
                 color="blue"
-                className="w-1/2 text-sm justify-center mr-4 px-6 py-2 text-white"
+                className="w-1/2 text-base justify-center mr-4 px-6 py-3 font-bold text-white"
                 onClick={onOk}
               >
                 Submit
               </Button>
               <Button
                 varient="primary"
-                className="w-1/2 text-sm justify-center px-6 py-2 text-blue-800 bg-blue-200"
+                className="w-1/2 text-base justify-center px-6 py-3 font-bold text-blue-800 bg-blue-200"
                 onClick={onCancel}
               >
                 Cancel
