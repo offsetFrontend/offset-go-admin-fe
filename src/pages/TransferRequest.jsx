@@ -72,6 +72,243 @@ const TransferRequest = () => {
       ],
       [
         "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],
+      [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],
+      [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],  [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],  [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],  [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],  [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],  [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],  [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],  [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],  [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],  [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],  [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],  [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],  [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],  [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],  [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],  [
+        "Lorem Ipsum",
+        "OG 001",
+        "Buyer",
+        "700",
+        " Lorem Ipsum",
+        <StatusButton
+          statusText={"In-Process"}
+          statusButton={() => {
+            handleStatusButton();
+          }}
+        />,
+        <ActionButtons />
+      ],
+      [
+        "Lorem Ipsum",
         "OG 003",
         "Trader",
         "300",
@@ -121,7 +358,7 @@ const TransferRequest = () => {
     <div className="flex h-full flex-col p-6 pl-3 w-full bg-gray-100 ">
       <h1 className="ml-6 text-3xl font-bold"> Transfer Request</h1>
 
-      <div className="w-full mt-8 h-[calc(90vh-3rem)] bg-white rounded-3xl shadow-formShadow">
+      <div className="w-full mt-8 h-[calc(90vh-2.4rem)] bg-white rounded-3xl shadow-formShadow relative">
         <div className="flex justify-between pt-5 pb-12">
           <div className="flex justify-between  px-5">
             <SearchBox ref={searchRef} onSearch={handleSearch} />
@@ -139,7 +376,7 @@ const TransferRequest = () => {
           </div>
         </div>
         <Table headerData={getHeaderData()} data={tableData()} />
-        <div className="absolute bottom-16 left-48 right-0">
+        <div className="absolute bottom-4 left-8 right-0 ">
           <Pagination
             currPage={currentPage}
             onNext={handleNextPage}
