@@ -9,7 +9,7 @@ const SideBar = () => {
 
   return (
     <>
-      <aside className="w-[20%] h-full bg-white">
+      <aside className="w-[16%] h-full bg-white">
         <div className="h-full px-3 py-4">
           <Link
             to=""
