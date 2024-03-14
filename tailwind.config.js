@@ -20,6 +20,9 @@ module.exports = {
         red: {
           200: "rgba(201, 2, 2, 0.2)",
           400: "#C90202"
+        },
+        grey:{
+          800:"#808080"
         }
       },
       backgroundImage: {

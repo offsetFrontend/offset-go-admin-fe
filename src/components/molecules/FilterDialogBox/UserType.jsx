@@ -25,7 +25,7 @@ const UserType = () => {
   };
 
   return (
-    <div className="flex gap-8 ml-3 mb-4">
+    <div className="flex gap-8 text-base font-normal text-black ml-3 mb-4">
       <RadioGroup
         options={radioOptions.map(({ label, value }) => ({
           label,

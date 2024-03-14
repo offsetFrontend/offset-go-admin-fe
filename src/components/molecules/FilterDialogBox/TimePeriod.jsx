@@ -15,8 +15,9 @@ const TimePeriod = ({ onChange }) => {
   return (
     <div className="ml-3 mb-6 flex items-center text-grey-800">
       <div className="mr-4 flex flex-col text-gray-400">
-        <label htmlFor="startDate">From</label>
-
+        <label htmlFor="startDate" className="text-[10px] font-normal">
+          From
+        </label>
         <input
           type="date"
           id="startDate"
@@ -25,8 +26,9 @@ const TimePeriod = ({ onChange }) => {
         />
       </div>
       <div className="mr-4 flex flex-col text-gray-400">
-        <label htmlFor="endDate">To</label>
-
+        <label htmlFor="endDate" className="text-[10px] font-normal">
+          To
+        </label>
         <input
           type="date"
           id="endDate"

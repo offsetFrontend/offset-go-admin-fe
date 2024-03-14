@@ -24,7 +24,7 @@ const SideBar = () => {
           {loading ? (
             <Loader />
           ) : (
-            <ul className="space-y-2 px-4 font-medium text-gray-500 leading-5 text-xs">
+            <ul className="py-1 px-4 font-medium text-gray-500 leading-5 text-xs">
               {sidenavData.map(
                 ({ title, redirectRoute, svgPath, subMenu }, index) => (
                   <NavButton

@@ -7,7 +7,7 @@ const Status = () => {
     setSelectedStatus(event.target.value);
   };
   return (
-    <div className="pb-2 w-full mb-2">
+    <div className="pb-2 w-full mb-2 pl-2">
       <select
         id="Status"
         value={selectedStatus}

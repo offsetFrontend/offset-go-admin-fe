@@ -66,19 +66,19 @@ const renderFilters = (page) => {
             </h2>
             <Status />
           </div>
-          <hr />
+         
         </>
       );
     case "ContactUs":
       return (
         <>
-          <h1 className="py-2 ml-3 text-xs font-normal text-gray-400">
+          <h1 className="mt-3 py-2 ml-3 text-xs font-normal text-gray-800">
             Time Period
           </h1>
           <TimePeriod />
           <hr />
           <div className="flex w-1/2 flex-col">
-            <h2 className="py-4 ml-3 text-xs font-normal text-gray-400">
+            <h2 className="py-4 ml-3 text-xs font-normal text-gray-800">
               Country
             </h2>
             <Country />
@@ -90,7 +90,7 @@ const renderFilters = (page) => {
     case "Inquire":
       return (
         <>
-          <h1 className="py-2 ml-3 text-xs font-normal text-gray-400">
+          <h1 className="py-2 ml-3 text-xs font-normal text-gray-800">
             Time Period
           </h1>
           <TimePeriod />
@@ -107,7 +107,7 @@ const renderFilters = (page) => {
     case "Subscription":
       return (
         <>
-          <h1 className="py-2 ml-3 text-xs font-normal text-gray-400">
+          <h1 className="py-2 ml-3 text-xs font-normal text-gray-800">
             Time Period
           </h1>
           <TimePeriod />

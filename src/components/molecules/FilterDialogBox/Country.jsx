@@ -15,7 +15,7 @@ const CountrySelect = (props) => {
         id="category"
         value={selectedCountry}
         onChange={handleCountryChange}
-        className="bg-white w-1/2 text-xs text-grey-800 py-1 pl-3 leading-normal font-normal border border-gray-300 rounded-lg "
+        className="bg-white w-full text-xs text-grey-800 py-1 pl-3 mb-5 leading-normal font-normal border border-gray-300 rounded-lg "
       >
         <option value=''>Select Country</option>
         {CountryStateCity.getAllCountries().map((country, index) => (
