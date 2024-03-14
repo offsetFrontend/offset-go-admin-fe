@@ -12,7 +12,7 @@ const Root = () => {
   }
 
   return (
-    <div className="flex w-full h-full">
+    <div className="flex w-full">
       <SideBar />
       <Outlet />
     </div>

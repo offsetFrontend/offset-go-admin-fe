@@ -5,7 +5,6 @@ import { getAllRegistries } from "../../../utils/api/getAllRegistries";
 
 const Registries = () => {
   const [registries, setRegistries] = useState([]);
-  const [selectedRegistry, setSelectedRegistry] = useState(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -22,12 +21,6 @@ const Registries = () => {
     };
     fetchRegistries();
   }, []);
-
-  const handleRadioChange = (e) => {
-    const selectedValue = e.target.value;
-
-    setSelectedRegistry(selectedValue);
-  };
 
   return (
     <div className="flex flex-wrap items-center ml-3 mb-4">
@@ -46,14 +39,12 @@ const Registries = () => {
                   background: `url(${registry.image})`,
                   backgroundSize: "contain",
                   backgroundRepeat: "no-repeat",
-                  backgroundPosition: "center"
+                  backgroundPosition: "center",
                 }}
-              ></div>
+              />
             ),
-            value: registry.registryName
+            value: registry.registryName,
           }))}
-          onChange={handleRadioChange}
-          value={selectedRegistry}
         />
       )}
     </div>
