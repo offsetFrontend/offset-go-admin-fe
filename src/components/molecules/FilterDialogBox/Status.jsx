@@ -1,17 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Status = () => {
-  const [selectedStatus, setSelectedStatus] = useState();
-
-  const handleStatusChange = (event) => {
-    setSelectedStatus(event.target.value);
-  };
   return (
     <div className="pb-2 w-full mb-2">
       <select
         id="Status"
-        value={selectedStatus}
-        onChange={handleStatusChange}
         className="bg-white w-full text-xs text-gray-800 py-1 pl-3 leading-normal font-normal border border-gray-300 rounded-lg focus:border-gray-300 focus:outline-none focus:ring-0"
       >
         <option value="">Select Status </option>

@@ -18,7 +18,7 @@ const Button = ({
   const borderVarients = {
     blue: "border-2 border-blue-800",
     green: "border-2 border border-green-600",
-    gray: "border-1 border border-grey-800",
+    gray: "border-1 border border-gray-800",
   };
 
   const colorVariants = {
@@ -26,7 +26,7 @@ const Button = ({
     blue: "bg-blue-800 hover:bg-blue-700",
     lightblue: "bg-blue-200",
     blue_300: "bg-blue-300",
-    gray: "bg-grey-800",
+    gray: "bg-gray-800",
     red: "bg-red-200",
   };
 
