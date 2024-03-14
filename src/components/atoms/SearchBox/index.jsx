@@ -10,7 +10,7 @@ const SearchBox = ({ onSearch }, ref) => {
         onSearch();
       }}
     >
-      <div className="flex border-2 p-1 rounded-xl px-3 w-fit bg-transparent">
+      <div className="flex border-2 py-px rounded-lg px-3 w-fit bg-transparent">
         <input
           ref={ref}
           type="text"

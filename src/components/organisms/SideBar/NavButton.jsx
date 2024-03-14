@@ -13,19 +13,19 @@ const NavButton = ({ id, TabTitle, link, icon, subMenu }) => {
       {subMenu ? (
         <div>
           <div
-            className="flex items-center p-2 pl-3 text-grey-700 rounded-lg cursor-pointer"
+            className="flex items-center text-gray-700 rounded-lg cursor-pointer"
             onClick={toggleSubMenu}
           >
             <div dangerouslySetInnerHTML={{ __html: icon }} />
             <span className="ml-3">{TabTitle}</span>
           </div>
           {subMenuOpen && (
-            <div>
+            <div className="pt-1">
               {subMenu.map(({ title, redirectRoute }, index) => (
                 <Link
                   key={`submenu_${index}`}
                   to={redirectRoute}
-                  className="flex w-full items-center pl-4 before:-translate-y-2 text-grey-700 before:content-[''] before:h-6 before:w-4 before:border-l-2 before:border-b-2 before:border-[#E5E5E5]"
+                  className="flex w-full items-center pl-1 before:-translate-y-2 text-gray-700 before:content-[''] before:h-6 before:w-4 before:border-l-2 before:border-b-2 before:border-[#E5E5E5]"
                 >
                   <span className="text-[10px] text-gray-500 h-fit self-end pl-2">
                     {title}
@@ -39,7 +39,7 @@ const NavButton = ({ id, TabTitle, link, icon, subMenu }) => {
         <Link
           to={link}
           href="#"
-          className="flex items-center p-2 text-grey-700 rounded-lg "
+          className="flex items-center text-gray-700 rounded-lg "
         >
           <div dangerouslySetInnerHTML={{ __html: icon }} />
           <span className="ml-3 mt-0.5">{TabTitle}</span>

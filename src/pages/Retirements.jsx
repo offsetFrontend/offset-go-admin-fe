@@ -1,8 +1,11 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Table from "../components/atoms/Table";
 import Badge from "../components/atoms/Badge";
 import Button from "../components/atoms/Button";
 import SearchBox from "../components/atoms/SearchBox";
+import Pagination from "../components/atoms/Pagination";
+import FilterButton from "../components/atoms/Button/FilterButton";
+import FilterDialogBox from "../components/molecules/FilterDialogBox";
 
 const ActionButton = ({ viewButton }) => {
   return (
@@ -31,6 +34,8 @@ const StatusButton = ({ statusButton, statusText }) => {
 
 const Retirements = () => {
   const searchRef = useRef();
+  const [isFilterDialogOpen, setFilterDialogOpen] = useState(false);
+
   const header = [
     "Project Name",
     "Project ID",
@@ -40,7 +45,7 @@ const Retirements = () => {
     "Status",
     "Action",
   ];
-  const data = [
+  const tableData = [
     [
       "Forestry",
       "OG 001",
@@ -94,14 +99,29 @@ const Retirements = () => {
   return (
     <div className=" h-full w-full p-6">
       <div className="text-[1.75rem] font-bold mb-4">Retirements</div>
-      <div className="w-full bg-white rounded-2xl shadow-formShadow pb-12 h-[calc(100vh-6rem)]">
-        <div className="flex justify-between py-5 px-8">
-          <SearchBox ref={searchRef} onSearch={handleSearch} />
+      <div className="w-full relative mt-8 h-[calc(90vh-2.8rem)] bg-white rounded-3xl shadow-formShadow">
+        <div className="flex justify-between pt-5 pb-12">
+          <div className="flex justify-between  px-5">
+            <SearchBox ref={searchRef} onSearch={handleSearch} />
+          </div>
+          <div className="pr-7 ">
+            <FilterButton onClick={() => setFilterDialogOpen(true)} />
+          </div>
         </div>
-        <div className="pt-6">
-          <Table headerData={header} data={data} bottomLine={false} />
+        <Table headerData={header} data={tableData} bottomLine={false} />
+        <div className="absolute bottom-16 left-48 right-0">
+          <Pagination currPage={1} onNext={() => {}} onPrev={() => {}} />
         </div>
       </div>
+
+      {isFilterDialogOpen && (
+        <FilterDialogBox
+          open={isFilterDialogOpen}
+          onCancel={() => setFilterDialogOpen(false)}
+          onOk={() => setFilterDialogOpen(false)}
+          page="Retirements"
+        />
+      )}
     </div>
   );
 };
