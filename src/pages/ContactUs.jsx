@@ -95,7 +95,7 @@ const ContactUs = () => {
   return (
     <div ref={pdfRef} className=" h-full w-full p-6">
       <div className="text-[1.75rem] font-bold mb-4">Contact</div>
-      <div className="w-full mt-8 h-[calc(90vh-3rem)] bg-white rounded-3xl shadow-formShadow">
+      <div className="w-full relative mt-8 h-[calc(90vh-2.8rem)] bg-white rounded-3xl shadow-formShadow">
         <div className="flex justify-between pt-5 pb-12">
           <div className="flex justify-between  px-5">
             <SearchBox ref={searchRef} onSearch={handleSearch} />
@@ -113,7 +113,7 @@ const ContactUs = () => {
           </div>
         </div>
         <Table headerData={header} data={tableData()} bottomLine={false} />
-        <div className="absolute bottom-16 left-48 right-0">
+        <div className="absolute bottom-4 left-8 right-0 ">
           <Pagination
             currPage={currentPage}
             onNext={handleNextPage}
