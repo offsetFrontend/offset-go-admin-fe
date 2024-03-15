@@ -109,7 +109,7 @@ const Retirements = () => {
           </div>
         </div>
         <Table headerData={header} data={tableData} bottomLine={false} />
-        <div className="absolute bottom-16 left-48 right-0">
+        <div className="absolute bottom-4 left-8 right-0">
           <Pagination currPage={1} onNext={() => {}} onPrev={() => {}} />
         </div>
       </div>
