@@ -10,7 +10,7 @@ const Category = () => {
         const categories = await getAllCategories();
         setCategories(categories);
       } catch (error) {
-        error("Error fetching categories:", error);
+        console.error("Error fetching categories:", error);
       }
     };
 
@@ -21,7 +21,7 @@ const Category = () => {
     <div className="pb-2 ml-3 mb-2">
       <select
         id="category"
-        className="bg-white w-full text-xs text-gray-400 py-1 pl-3 leading-normal font-normal border border-gray-300 rounded-lg"
+        className="bg-white w-full text-xs text-gray-400 py-1 pl-3 leading-normal font-normal border border-gray-300 rounded-lg focus:border-gray-300 focus:outline-none focus:ring-0"
       >
         <option value="">Select the Category</option>
         {categories.map((category) => (
