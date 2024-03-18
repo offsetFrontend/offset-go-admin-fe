@@ -93,7 +93,7 @@ const TransferRequest = () => {
     <div className="flex h-full flex-col p-6 pl-3 w-full bg-gray-100">
       <h1 className="ml-6 text-3xl font-bold"> Transfer Request</h1>
 
-      <div className="w-full mt-8 h-[calc(90vh-2.4rem)] bg-whiterounded-3xl shadow-formShadow flex flex-col">
+      <div className="w-full mt-8 h-[calc(90vh-2.4rem)] bg-white rounded-3xl shadow-formShadow flex flex-col">
         <div className="flex justify-between pt-5 pb-12">
           <div className="pl-8">
             <SearchBox ref={searchRef} onSearch={handleSearch} />
