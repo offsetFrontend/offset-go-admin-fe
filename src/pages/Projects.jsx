@@ -54,7 +54,7 @@ const Projects = () => {
     "Type",
     "Project Status",
     "Registry",
-    "Action"
+    "Action",
   ];
 
   const tableData = [
@@ -69,7 +69,7 @@ const Projects = () => {
         }}
       />,
       <span className="text-blue-800 font-medium">VERRA</span>,
-      <ActionButtons />
+      <ActionButtons />,
     ],
     [
       "Verra",
@@ -82,8 +82,8 @@ const Projects = () => {
         }}
       />,
       <span className="text-blue-800 font-medium">GOLD STANDARD</span>,
-      <ActionButtons />
-    ]
+      <ActionButtons />,
+    ],
   ];
 
   const handleSearch = () => {
@@ -97,17 +97,19 @@ const Projects = () => {
     <div className="flex h-full flex-col p-6 pl-3 w-full bg-gray-100">
       <h1 className="ml-6 text-3xl font-bold"> Projects</h1>
 
-      <div className="w-full relative mt-8 h-[calc(90vh-2.4rem)] bg-white rounded-3xl shadow-formShadow">
+      <div className="w-full mt-8 h-[calc(90vh-2.4rem)] bg-white rounded-3xl shadow-formShadow flex flex-col">
         <div className="flex justify-between pt-5 pb-12">
-          <div className="flex justify-between px-8">
+          <div className="pl-8">
             <SearchBox ref={searchRef} onSearch={handleSearch} />
           </div>
           <div className="pr-7 ">
             <FilterButton onClick={() => setFilterDialogOpen(true)} />
           </div>
         </div>
-        <Table headerData={header} data={tableData} />
-        <div className="absolute bottom-4 left-8 right-0 ">
+        <div className="flex-grow overflow-y-scroll">
+          <Table headerData={header} data={tableData} />
+        </div>
+        <div className="pb-4">
           <Pagination currPage={1} onNext={() => {}} onPrev={() => {}} />
         </div>
       </div>
