@@ -68,7 +68,7 @@ const Projects = () => {
           handleStatusButton();
         }}
       />,
-      "VERRA",
+      <span className="text-blue-800 font-medium">VERRA</span>,
       <ActionButtons />
     ],
     [
@@ -81,7 +81,7 @@ const Projects = () => {
           handleStatusButton();
         }}
       />,
-      "GOLD STANDARD",
+      <span className="text-blue-800 font-medium">GOLD STANDARD</span>,
       <ActionButtons />
     ]
   ];
