@@ -22,17 +22,19 @@ const Subscription = () => {
   return (
     <div className=" h-full w-full p-6">
       <div className="text-[1.75rem] font-bold mb-4">Subscription</div>
-      <div className="w-full relative mt-8 h-[calc(90vh-2.8rem)] bg-white rounded-3xl shadow-formShadow">
+      <div className="w-full mt-8 h-[calc(90vh-2.8rem)] bg-white rounded-3xl shadow-formShadow flex flex-col">
         <div className="flex justify-between pt-5 pb-12">
-          <div className="flex justify-between  px-5">
+          <div className="pl-8">
             <SearchBox ref={searchRef} onSearch={handleSearch} />
           </div>
           <div className="pr-7 ">
             <FilterButton onClick={() => setFilterDialogOpen(true)} />
           </div>
         </div>
+        <div className="flex-grow overflow-y-scroll">
         <Table headerData={header} data={tableData} bottomLine={false} />
-        <div className="absolute bottom-4 left-8 right-0 ">
+        </div>
+        <div className="pb-4">
           <Pagination currPage={1} onNext={() => {}} onPrev={() => {}} />
         </div>
       </div>
