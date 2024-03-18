@@ -1,8 +1,11 @@
-import React, { useRef } from "react";
+import React, {useState,useRef } from "react";
 import Button from "../components/atoms/Button";
 import Badge from "../components/atoms/Badge";
+import FilterButton from "../components/atoms/Button/FilterButton";
 import Table from "../components/atoms/Table";
+import FilterDialogBox from "../components/molecules/FilterDialogBox";
 import SearchBox from "../components/atoms/SearchBox";
+import Pagination from "../components/atoms/Pagination";
 
 const ActionButtons = ({ onEditClick }) => (
   <div className="flex items-center justify-center gap-x-3 relative">
@@ -33,8 +36,8 @@ const StatusButton = ({ statusButton, statusText }) => {
 };
 const TransferRequest = () => {
   const searchRef = useRef();
-  const getHeaderData = () => {
-    return [
+  const [isFilterDialogOpen, setFilterDialogOpen] = useState(false);
+  const header=[
       "Project Name",
       "Project ID",
       "User Type",
@@ -43,10 +46,9 @@ const TransferRequest = () => {
       "Status",
       "Action"
     ];
-  };
+  
 
-  const tableData = () => {
-    return [
+  const tableData = [
       [
         "Lorem Ipsum",
         "OG 001",
@@ -78,7 +80,6 @@ const TransferRequest = () => {
         <ActionButtons />
       ]
     ];
-  };
 
  
   const handleStatusButton = () => {
@@ -89,26 +90,33 @@ const TransferRequest = () => {
   };
 
   return (
-    <div className="flex  flex-col pt-4 w-full bg-gray-100 border">
+    <div className="flex h-full flex-col p-6 pl-3 w-full bg-gray-100">
       <h1 className="ml-6 text-3xl font-bold"> Transfer Request</h1>
 
-      <div className="w-full h-full pt-4 mt-8 bg-white rounded-3xl">
+      <div className="w-full mt-8 h-[calc(90vh-2.4rem)] bg-whiterounded-3xl shadow-formShadow flex flex-col">
         <div className="flex justify-between pt-5 pb-12">
-          <div className="flex justify-between py-5 px-8">
+          <div className="pl-8">
             <SearchBox ref={searchRef} onSearch={handleSearch} />
           </div>
-          <div className="mr-10 ">
-            <Button
-              className="flex justify-center items-center gap-x-2 px-2  py-2 h-fit"
-              borderColor={"gray"}
-              varient={"secondary"}
-            >
-              <span>Filter</span>
-            </Button>
+          <div className="pr-7 ">
+            <FilterButton onClick={() => setFilterDialogOpen(true)} />
           </div>
         </div>
-        <Table headerData={getHeaderData()} data={tableData()} />
+        <div className="flex-grow overflow-y-scroll">
+          <Table headerData={header} data={tableData} />
+        </div>
+        <div className="pb-4">
+          <Pagination currPage={1} onNext={() => {}} onPrev={() => {}} />
+        </div>
       </div>
+      {isFilterDialogOpen && (
+        <FilterDialogBox
+          open={isFilterDialogOpen}
+          onCancel={() => setFilterDialogOpen(false)}
+          onOk={() => setFilterDialogOpen(false)}
+          page="TransferRequest"
+        />
+      )}
     </div>
   );
 };
