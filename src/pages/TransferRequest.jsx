@@ -102,7 +102,7 @@ const TransferRequest = () => {
             <FilterButton onClick={() => setFilterDialogOpen(true)} />
           </div>
         </div>
-        <div className="flex-grow overflow-y-scroll">
+        <div className="flex-grow overflow-y-auto">
           <Table headerData={header} data={tableData} />
         </div>
         <div className="pb-4">
