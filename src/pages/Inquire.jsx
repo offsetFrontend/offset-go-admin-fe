@@ -10,10 +10,10 @@ import FilterDialogBox from "../components/molecules/FilterDialogBox";
 const ActionButton = (pushButton) => {
   return (
     <Button
-      color={"lightblue"}
+      color={"blue_600"}
       varient={"primary"}
       onClick={pushButton}
-      className={"text-blue-600 px-7 text-[9px] py-1 font-bold"}
+      className={"text-blue-800 px-7 text-[9px] py-1 font-bold"}
     >
       Push
     </Button>
