@@ -81,8 +81,24 @@ const ContactUs = () => {
             <FilterButton onClick={() => setFilterDialogOpen(true)} />
           </div>
         </div>
+        <div className="flex justify-end gap-2 pr-6">
+          <Button
+            color={"blue"}
+            varient={"primary"}
+            className={"text-white px-8 text-[9px] py-1 font-bold"}
+          >
+            Pdf
+          </Button>
+          <Button
+            color={"blue"}
+            varient={"primary"}
+            className={"text-white px-8 text-[9px] py-1 font-bold"}
+          >
+            Excel{" "}
+          </Button>
+        </div>
         <div className="flex-grow overflow-y-scroll">
-        <Table headerData={header} data={tableData} bottomLine={false} />
+          <Table headerData={header} data={tableData} bottomLine={false} />
         </div>
         <div className="pb-4">
           <Pagination currPage={1} onNext={() => {}} onPrev={() => {}} />
