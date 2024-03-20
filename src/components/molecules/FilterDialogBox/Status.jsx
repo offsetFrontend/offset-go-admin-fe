@@ -6,8 +6,9 @@ const Status = () => {
       <select
         id="Status"
         className="bg-white w-full text-xs text-gray-800 py-1 pl-3 leading-normal font-normal border border-gray-300 rounded-lg focus:border-gray-300 focus:outline-none focus:ring-0"
+        defaultValue=""
       >
-        <option value="">Select Status </option>
+        <option value="" disabled >Select Status</option>
         <option value="Status1">Verification</option>
         <option value="Status1">Completed</option>
         <option value="Status2">Pending</option>
