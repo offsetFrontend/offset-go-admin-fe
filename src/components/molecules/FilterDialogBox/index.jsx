@@ -115,6 +115,23 @@ const renderFilters = (page) => {
           <hr />
         </>
       );
+      case "WalletManage":
+      return (
+        <>
+          <h1 className="py-2 ml-3 text-xs font-normal text-gray-800">
+            UserType
+          </h1>
+          <UserType />
+          <hr />
+          <div className="flex w-1/2 flex-col">
+            <h2 className="py-4 ml-3 text-xs font-normal text-gray-800">
+              Status
+            </h2>
+            <Status />
+          </div>
+          <hr />
+        </>
+      );
 
     default:
       return null;

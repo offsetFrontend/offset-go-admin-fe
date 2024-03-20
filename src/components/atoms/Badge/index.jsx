@@ -11,7 +11,8 @@ const border_style = {
   "document uploaded":
     "border-2 border-yellow-500 text-yellow-500 rounded-full",
   verification: "border-2 border-teal-500 text-teal-500 rounded-full",
-  "action required": "border-2 border-red-500 text-red-500 rounded-full"
+  "action required": "border-2 border-red-500 text-red-500 rounded-full",
+  requested:"border-2 border-blue-800 text-blue-800 rounded-full",
 };
 
 const background_style = {
@@ -24,7 +25,8 @@ const background_style = {
   "transaction cancelled": "bg-red-500  bg-opacity-15 rounded-full",
   "document uploaded": "bg-yellow-500  bg-opacity-15 rounded-full",
   verification: "bg-teal-500  bg-opacity-15 rounded-full",
-  "action required": "bg-red-500  bg-opacity-15 rounded-full"
+  "action required": "bg-red-500  bg-opacity-15 rounded-full",
+  "requested": "bg-blue-800  bg-opacity-15 rounded-full"
 };
 
 const Badge = ({ children, varient }) => {
