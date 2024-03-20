@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import Table from "../components/atoms/Table";
 import Button from "../components/atoms/Button";
 import SearchBox from "../components/atoms/SearchBox";
+import arrow from "../assets/svgs/downarrow.svg";
 import Pagination from "../components/atoms/Pagination";
 import FilterButton from "../components/atoms/Button/FilterButton";
 import FilterDialogBox from "../components/molecules/FilterDialogBox";
@@ -73,7 +74,7 @@ const ContactUs = () => {
     <div ref={pdfRef} className=" h-full w-full p-6">
       <div className="text-[1.75rem] font-bold mb-4">Contact</div>
       <div className="w-full mt-8 h-[calc(90vh-2.8rem)] bg-white rounded-3xl shadow-formShadow flex flex-col">
-        <div className="flex justify-between pt-5 pb-12">
+        <div className="flex justify-between pt-5 pb-4">
           <div className="pl-8">
             <SearchBox ref={searchRef} onSearch={handleSearch} />
           </div>
@@ -81,20 +82,26 @@ const ContactUs = () => {
             <FilterButton onClick={() => setFilterDialogOpen(true)} />
           </div>
         </div>
-        <div className="flex justify-end gap-2 pr-6">
+        <div className="flex justify-end gap-5 pb-10 pr-6">
           <Button
-            color={"blue"}
+            color={"blue_800"}
             varient={"primary"}
-            className={"text-white px-8 text-[9px] py-1 font-bold"}
+            className={
+              "text-white flex justify-center items-center px-9 text-[9px] py-2 font-bold"
+            }
           >
+            <img src={arrow} alt="SVG icon" className="w-2.5 h-2.5 mr-1" />
             Pdf
           </Button>
           <Button
-            color={"blue"}
+            color={"blue_800"}
             varient={"primary"}
-            className={"text-white px-8 text-[9px] py-1 font-bold"}
+            className={
+              "text-white flex justify-center items-center px-8 text-[9px] py-2 font-bold"
+            }
           >
-            Excel{" "}
+            <img src={arrow} alt="icon" className="w-2.5 h-2.5 mr-2" />
+            Excel
           </Button>
         </div>
         <div className="flex-grow overflow-y-scroll">
