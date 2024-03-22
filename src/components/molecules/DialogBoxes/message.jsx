@@ -10,7 +10,7 @@ const MessageDialogBox = ({ open, onOk, onCancel }) => {
   };
 
   const handleOkClick = () => {
-    onOk(message); // Pass the message to the parent component
+    onOk(message); 
   };
   return (
     <DiaglogBox open={open} onCancel={onCancel} width={520}>

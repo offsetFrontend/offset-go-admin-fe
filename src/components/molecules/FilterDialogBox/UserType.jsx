@@ -4,6 +4,7 @@ import RadioGroup from "../../atoms/RadioGroup";
 const radioOptions = [
   { label: "All", value: "All" },
   { label: "Buyer", value: "Buyer" },
+  { label: "Seller", value: "Seller" },
   { label: "Trader", value: "Trader" },
 ];
 

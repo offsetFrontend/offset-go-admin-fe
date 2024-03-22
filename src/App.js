@@ -24,6 +24,7 @@ import Projects from "./pages/Projects";
 import WalletManage from "./pages/WalletManage.jsx";
 import { loader as RootPageLoader } from "./pages/Root.jsx";
 import RetirementsDetails from "./pages/Retirementdetails.jsx";
+import WalletTransactionDetails from "./pages/WalletTransactionDetails.jsx";
 function App() {
   const { authUser } = useAuthContext();
   const router = createBrowserRouter([
@@ -40,6 +41,7 @@ function App() {
         { path: "retirements", element: <Retirements /> },
         { path: "retirement-details", element: <RetirementsDetails /> },
         { path: "/transfer-requests", element: <TransferRequest /> },
+        { path: "/wallet-manage/WalletTransactionDetails/:reqId", element: <WalletTransactionDetails /> },
         { path: "/wallet-manage", element: <WalletManage /> },
         { path: "forms/contact-us", element: <ContactUs /> },
         { path: "forms/inquire", element: <Inquire /> },
