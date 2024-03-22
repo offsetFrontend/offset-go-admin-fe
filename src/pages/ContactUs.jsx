@@ -13,7 +13,7 @@ const ActionButton = ({ viewButton }) => {
       color={"blue_300"}
       varient={"primary"}
       onClick={viewButton}
-      className={"text-blue-600 px-7 text-[9px] py-1 font-bold"}
+      className={"text-blue-800 px-7 text-[9px] py-1 font-bold"}
     >
       View
     </Button>
