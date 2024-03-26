@@ -18,7 +18,7 @@ const ActionButton = ({ viewButton }) => {
   return (
     <Button
       color={"blue"}
-      varient={"primary"} // Kept as is, assuming it's intentional
+      varient={"primary"}
       onClick={handleViewButton}
       className={"text-white px-7 text-[9px] py-1.5 font-bold"}
     >
