@@ -6,13 +6,20 @@ import SearchBox from "../components/atoms/SearchBox";
 import Pagination from "../components/atoms/Pagination";
 import FilterButton from "../components/atoms/Button/FilterButton";
 import FilterDialogBox from "../components/molecules/FilterDialogBox";
+import { useNavigate } from "react-router-dom";
 
 const ActionButton = ({ viewButton }) => {
+  const navigate = useNavigate();
+
+  const handleViewButton = () => {
+    navigate("/RetirementDetails");
+  };
+
   return (
     <Button
       color={"blue"}
-      varient={"primary"}
-      onClick={viewButton}
+      varient={"primary"} // Kept as is, assuming it's intentional
+      onClick={handleViewButton}
       className={"text-white px-7 text-[9px] py-1.5 font-bold"}
     >
       View
