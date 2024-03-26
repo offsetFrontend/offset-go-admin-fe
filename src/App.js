@@ -21,6 +21,8 @@ import UserList from "./pages/UserList.jsx";
 import Root from "./pages/Root.jsx";
 import Projects from "./pages/Projects";
 import { loader as RootPageLoader } from "./pages/Root.jsx";
+import RetirementDetails from "./pages/RetirementDetails.jsx";
+import TransferDetails from "./pages/TransferDetails.jsx";
 function App() {
   const { authUser } = useAuthContext();
   const router = createBrowserRouter([
@@ -43,6 +45,8 @@ function App() {
         { path: "setting/static-pages", element: <StaticPages /> },
         { path: "setting/roles", element: <Roles /> },
         { path: "setting/users", element: <UserList /> },
+        {path: "/RetirementDetails", element: <RetirementDetails/>},
+        { path: "/TransferDetails", element: <TransferDetails/>},
       ],
     },
   ]);

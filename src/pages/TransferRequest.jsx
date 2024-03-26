@@ -3,23 +3,30 @@ import Button from "../components/atoms/Button";
 import Badge from "../components/atoms/Badge";
 import Table from "../components/atoms/Table";
 import SearchBox from "../components/atoms/SearchBox";
+import { useNavigate } from "react-router-dom";
 
-const ActionButtons = ({ onEditClick }) => (
-  <div className="flex items-center justify-center gap-x-3 relative">
-    <>
+const ActionButtons = ({ onEditClick }) => {
+  const navigate = useNavigate();
+
+  const handleEditClick = () => {
+    navigate("/TransferDetails");
+  };
+
+  return (
+    <div className="flex items-center justify-center gap-x-3 relative">
       <Button
-        color={"blue"}
-        varient={"primary"}
-        onClick={() => onEditClick()}
+        color="blue"
+        variant="primary"
+        onClick={handleEditClick}
         className={
-          "text-white w-[4.5rem] text-[0.5625rem] h-[1.875rem] font-medium"
+          "text-white w-[4.5rem] text-[0.5625rem] h-[1.875rem] rounded-md font-medium"
         }
       >
         Edit
       </Button>
-    </>
-  </div>
-);
+    </div>
+  );
+};
 const StatusButton = ({ statusButton, statusText }) => {
   return (
     <button onClick={statusButton} className="p-0 m-0">
@@ -41,7 +48,7 @@ const TransferRequest = () => {
       "No. of credits",
       "Owner Name",
       "Status",
-      "Action"
+      "Action",
     ];
   };
 
@@ -60,7 +67,7 @@ const TransferRequest = () => {
             handleStatusButton();
           }}
         />,
-        <ActionButtons />
+        <ActionButtons />,
       ],
       [
         "Lorem Ipsum",
@@ -75,12 +82,11 @@ const TransferRequest = () => {
             handleStatusButton();
           }}
         />,
-        <ActionButtons />
-      ]
+        <ActionButtons />,
+      ],
     ];
   };
 
- 
   const handleStatusButton = () => {
     console.log("status button clicked");
   };
