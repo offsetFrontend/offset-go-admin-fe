@@ -27,7 +27,7 @@ const TransferDetails = () => {
 
   const CreditData = [
     { label: "Project name", value: "Forestry" },
-    { label: "Registry", value: "Verra" },
+    { label: "Registry", value:<span className="text-blue-800">Verra</span> },
     { label: "No. of Credits", value: "700" },
     { label: "Category", value: "Nature-based Credits" },
     {
@@ -44,7 +44,7 @@ const TransferDetails = () => {
   ];
   const BuyerData = [
     { label: "Name", value: "Lorem Lpsum" },
-    { label: "Registry", value: "Verra" },
+    { label: "Registry", value:<span className="text-blue-800">Verra</span> },
     { label: "Registry Username", value: "Lorem@verra" },
     { label: "Registry ID", value: "#5678" },
     { label: "Email id", value: "Lorem@email.com" },
