@@ -19,6 +19,7 @@ const Button = ({
     blue: "border-2 border-blue-800",
     green: "border-2 border border-green-600",
     gray: "border-1 border border-gray-800",
+    grey: "border-1 border border-gray-600",
   };
 
   const colorVariants = {
@@ -28,6 +29,7 @@ const Button = ({
     blue_300: "bg-blue-300",
     gray: "bg-gray-800",
     red: "bg-red-200",
+    grey:"bg-gray-600",
   };
 
   return (
