@@ -33,11 +33,12 @@ module.exports = {
         }
       },
       backgroundImage: {
-        'gold-gradient': 'linear-gradient(to right, #FFE36D, #F4AA26)',
-        'silver-gradient': 'linear-gradient(to right, #A1A0A5, #797783)',
-        'bronze-gradient': 'linear-gradient(to right, #F2B575, #C17526)'
-      }
-    }
+        "gold-gradient": "linear-gradient(to right, #FFE36D, #F4AA26)",
+        "silver-gradient": "linear-gradient(to right, #A1A0A5, #797783)",
+        "bronze-gradient": "linear-gradient(to right, #F2B575, #C17526)",
+        "formShadow": "0px -2px 4px 0px rgba(0, 0, 0, 0.10)",
+      },
+    },
   },
   plugins: []
 }

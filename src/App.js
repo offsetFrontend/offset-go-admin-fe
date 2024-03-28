@@ -21,6 +21,7 @@ import UserList from "./pages/UserList.jsx";
 import Root from "./pages/Root.jsx";
 import Projects from "./pages/Projects";
 import { loader as RootPageLoader } from "./pages/Root.jsx";
+import ViewProject from "./pages/ViewProject.jsx";
 function App() {
   const { authUser } = useAuthContext();
   const router = createBrowserRouter([
@@ -32,6 +33,7 @@ function App() {
       children: [
         { index: true, element: <Home /> },
         { path: "/projects", element: <Projects /> },
+        { path: "/project/:project-id", element: <ViewProject/> },
         { path: "transactions", element: <Transactions /> },
         { path: "retirements", element: <Retirements /> },
         { path: "/transfer-requests", element: <TransferRequest /> },
