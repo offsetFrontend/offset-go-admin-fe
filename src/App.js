@@ -21,6 +21,8 @@ import UserList from "./pages/UserList.jsx";
 import Root from "./pages/Root.jsx";
 import Projects from "./pages/Projects";
 import { loader as RootPageLoader } from "./pages/Root.jsx";
+import { OffSetGoDetails } from "./pages/OffSetGoDetails.jsx";
+
 function App() {
   const { authUser } = useAuthContext();
   const router = createBrowserRouter([
@@ -43,6 +45,8 @@ function App() {
         { path: "setting/static-pages", element: <StaticPages /> },
         { path: "setting/roles", element: <Roles /> },
         { path: "setting/users", element: <UserList /> },
+        { path: "setting/offsetgo-details", element: <OffSetGoDetails/>},
+        
       ],
     },
   ]);
