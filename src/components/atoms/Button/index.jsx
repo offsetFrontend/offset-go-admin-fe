@@ -24,6 +24,8 @@ const Button = ({
   const colorVariants = {
     white: "bg-white",
     blue: "bg-blue-800 hover:bg-blue-700",
+    blue_600:"bg-blue-600",
+    blue_800:"bg-blue-800",
     lightblue: "bg-blue-200",
     blue_300: "bg-blue-300",
     gray: "bg-gray-800",
