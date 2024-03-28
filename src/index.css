@@ -27,3 +27,13 @@
     background: linear-gradient(to right, #C17526, #F2B575);
   }
 }
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+  .no-scrollbar {
+      -ms-overflow-style: none;  
+      scrollbar-width: none;
+}
+}
