@@ -9,12 +9,8 @@ import { useNavigate } from "react-router-dom";
 
 
 const DashboardMessage = ({ open, onOk, onCancel }) => {
-  const [message, setMessage] = useState("");
+  
   const navigate = useNavigate();
-
-  const handleInputChange = (event) => {
-    setMessage(event.target.value);
-  };
 
   const handleOkClick = () => {
     

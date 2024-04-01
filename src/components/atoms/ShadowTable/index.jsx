@@ -36,7 +36,7 @@ const TableData = ({ children, style }) => {
 };
 
 const TableRow = ({ children, shadow }) => {
-  const shadowClasses = shadow ? "shadow-md" : "";
+  
 
   return (
     <tr className={`relative`}>
