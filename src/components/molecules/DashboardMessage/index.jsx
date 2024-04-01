@@ -4,6 +4,7 @@ import ShadowTable from "../../atoms/ShadowTable";
 import Button from "../../atoms/Button";
 import { ReactComponent as GreenArrow } from "../../../assets/svgs/greenArrow.svg";
 import { ReactComponent as RedArrow } from "../../../assets/svgs/redArrow.svg";
+import {ReactComponent as GreyArrow } from "../../../assets/svgs/greyArrow.svg"
 import { useNavigate } from "react-router-dom";
 
 
@@ -26,11 +27,11 @@ const DashboardMessage = ({ open, onOk, onCancel }) => {
 
   const header = ["Name", "Price", "Volume", "Trend"];
   const body = [
-    ["AirCarbon Exchange", "$ 12", "90", <GreenArrow className="w-[10px] h-[10px]" />],
-    ["Carbon Expert Romania", "$ 8", "70", <RedArrow className="w-[10px] h-[10px]" />],
-    ["Carbon Trade Exchange", "$ 6", "40", <GreenArrow className="w-[10px] h-[10px]" />],
-    ["Terrapass", "$ 3", "20", <RedArrow className="w-[10px] h-[10px]" />],
-    ["Methane avoidance using water saving technologies", "$ 2", "7", <RedArrow className="w-[10px] h-[10px]" />],
+    ["AirCarbon Exchange", "$ 12", "90", <div className="flex"><GreenArrow className="w-[10px] h-[10px]" /><GreyArrow className="w-[10px] h-[10px]" /></div>],
+    ["Carbon Expert Romania", "$ 8", "70", <div className="flex"><RedArrow className="w-[10px] h-[10px]" /><GreyArrow className="w-[10px] h-[10px]" /></div>],
+    ["Carbon Trade Exchange", "$ 6", "40", <div className="flex"><GreenArrow className="w-[10px] h-[10px]" /><GreyArrow className="w-[10px] h-[10px]" /></div>],
+    ["Terrapass", "$ 3", "20", <div className="flex"><RedArrow className="w-[10px] h-[10px]" /><GreyArrow className="w-[10px] h-[10px]" /></div>],
+    ["Methane avoidance using water saving technologies", "$ 2", "7", <div className="flex"><RedArrow className="w-[10px] h-[10px]" /><GreyArrow className="w-[10px] h-[10px]" /></div>],
   ];
 
   return (
