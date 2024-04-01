@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { ReactComponent as Compose } from "../assets/svgs/compose.svg";
-
+import DashboardMessage from "../components/molecules/DashboardMessage";
 
 const Dashboard = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [selectedCompose, setSelectedCompose] = useState(null);
+
+  const toggleDialog = (composeId) => {
+    setSelectedCompose(composeId);
+    setIsDialogOpen(true);
+  };
+
   const getRowColor = (index) => {
     return index % 2 === 0 ? "bg-blue-100" : "bg-white";
   };
@@ -38,16 +46,16 @@ const Dashboard = () => {
       <span className="text-[1.75rem] font-bold ml-3 leading-9">
         Dashboard management
       </span>
-      <div className="flex-1 pt-8 gap-y-4 bg-white rounded-3xl shadow-formShadow pb-8">
-      <div className="flex items-center"> 
-        <h1 className="text-2xl font-medium pl-8 mr-4">Sdg in Demand</h1>
-        <Compose /> 
-      </div>
-      <div className="flex items-center"> 
-        <h1 className="mt-8 text-2xl font-medium pl-8 ">
-          Top 5 Credits - Highest amount first
-        </h1>
-        <Compose className="mt-8 ml-5" />
+      <div className=" flex-1 pt-8 gap-y-4 bg-white rounded-3xl shadow-formShadow pb-8">
+        <div className="flex items-center ">
+          <h1 className="text-2xl font-medium pl-8 mr-4">Sdg in Demand</h1>
+          <Compose onClick={() => toggleDialog(1)} />
+        </div>
+        <div className="flex items-center">
+          <h1 className="mt-8 text-2xl font-medium pl-8 ">
+            Top 5 Credits - Highest amount first
+          </h1>
+          <Compose className="mt-8 ml-5" onClick={() => toggleDialog(2)} />
         </div>
         <div className="mt-5">
           {creditData.map((item, index) => (
@@ -64,11 +72,11 @@ const Dashboard = () => {
           ))}
         </div>
         <div className="mt-16">
-        <div className="flex items-center"> 
-          <h1 className="text-2xl font-medium pl-8">
-            Top 5 Credits - In Dimand
-          </h1>
-          <Compose className="ml-5"/>
+          <div className="flex items-center">
+            <h1 className="text-2xl font-medium pl-8">
+              Top 5 Credits - In Dimand
+            </h1>
+            <Compose className="ml-5" onClick={() => toggleDialog(3)} />
           </div>
           <div className="mt-5">
             {Data.map((item, index) => (
@@ -89,6 +97,12 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+      {isDialogOpen && (
+        <DashboardMessage
+          open={isDialogOpen}
+          onCancel={() => setIsDialogOpen(false)}
+        />
+      )}
     </div>
   );
 };
