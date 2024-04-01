@@ -44,7 +44,7 @@ const TableRow = ({ children, shadow }) => {
       {shadow && (
         <>
           <div className={`absolute left-0 right-0 bottom-0 h-1 shadow-md `} />
-          
+
           <div
             className={`absolute right-0 bottom-0 w-1 h-1  rounded-full shadow-md`}
           />
@@ -80,7 +80,7 @@ const TableBody = ({ data, bottomLine }) => {
         <TableRow
           key={`table-row-${rowIndex}`}
           bottomLine={bottomLine ? true : rowIndex + 1 !== data.length}
-          shadow 
+          shadow
         >
           {row.map((item, index) => (
             <TableData

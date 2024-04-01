@@ -44,14 +44,14 @@ const DashboardMessage = ({ open, onOk, onCancel }) => {
           <div className="flex items-center mt-5">
             <p className="text-lg font-medium mr-2">Data Range -</p>
             <div className="flex items-center ml-2">
-              <p className="text-[10px] font-normal bg-gray-100 text-gray-800 w-[104px] h-[17px] px-1 py-1 rounded underline">
+              <p className="text-[10px] font-normal bg-gray-100 text-gray-800 w-[104px] h-[17px] px-1 pt-[2px] rounded underline">
                 Last 5 year
               </p>
             </div>
           </div>
           <div className="flex items-center mt-5">
             <p className="text-lg font-medium mr-2">Ref Volume -</p>
-            <p className="text-[10px] font-normal bg-gray-100 text-gray-800 w-[140px] h-[17px] py-1 px-1 rounded underline">
+            <p className="text-[10px] font-normal bg-gray-100 text-gray-800 w-[140px] h-[17px] pt-[2px] px-1 rounded underline">
               100
             </p>
           </div>
@@ -65,7 +65,7 @@ const DashboardMessage = ({ open, onOk, onCancel }) => {
               color={"blue"}
               varient={"primary"}
               onClick={handleOkClick}
-              className={"text-white text-[9px] px-[70px] py-3 font-bold"}
+              className={"text-white text-[9px] px-20 py-3 rounded-[3px] font-bold"}
             >
               Save
             </Button>
@@ -75,7 +75,7 @@ const DashboardMessage = ({ open, onOk, onCancel }) => {
               color={"red"}
               varient={"primary"}
               onClick={handleCancelClick}
-              className={"text-red-600 text-[9px] px-[70px] py-3 font-bold  border-[0.5px] rounded border-red-600"}
+              className={"text-red-600 text-[9px] px-20 py-3 font-bold  border-[0.5px] rounded-[3px] border-red-600"}
             >
               Cancel
             </Button>
