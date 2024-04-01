@@ -143,7 +143,7 @@ const RetirementDetails = () => {
                   variant={"secondary"}
                 >
                   <span className="text-white text-[9px] font-bold">
-                    Update
+                    Upload
                   </span>
                 </Button>
               </div>
