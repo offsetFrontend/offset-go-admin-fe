@@ -112,7 +112,7 @@ const RetirementDetails = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/2 mt-10">
+        <div className="w-full  mt-10">
           <h1 className="text-2xl font-medium pl-8">Retirement Details</h1>
           <div className=" mt-2">
             {RetirementData.map((item, index) => (
@@ -120,7 +120,7 @@ const RetirementDetails = () => {
                 key={index}
                 className={`${getRowColor(index)} pl-8 py-1 flex`}
               >
-                <span className="w-1/2 text-[14px]">{item.label} -</span>
+                <span className="w-1/4 text-[14px]">{item.label} -</span>
                 <span className="w-1/2 text-[14px] font-bold">
                   {item.value}
                 </span>
@@ -128,7 +128,7 @@ const RetirementDetails = () => {
             ))}
           </div>
         </div>
-        <div className="w-1/2 mt-10">
+        <div className="w-full mt-10">
           <h1 className="text-2xl font-medium pl-8">Documents</h1>
           <div className=" mt-2">
             {DocumentData.map((item, index) => (
@@ -136,7 +136,7 @@ const RetirementDetails = () => {
                 key={index}
                 className={`${getRowColor(index)} pl-8 py-1 flex`}
               >
-                <span className="w-1/2 text-[14px]">{item.label} -</span>
+                <span className="w-1/5 text-[14px]">{item.label} </span>
                 <Button
                   className="bg-blue-800 rounded flex justify-center items-center px-3 py-1"
                   borderColor={"blue"}

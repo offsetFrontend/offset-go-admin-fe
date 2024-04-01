@@ -26,7 +26,7 @@ const TransferDetails = () => {
   };
 
   const CreditData = [
-    { label: "Project name", value: "Forestry" },
+    { label: "Project name ", value: "Forestry" },
     { label: "Registry", value:<span className="text-blue-800">Verra</span> },
     { label: "No. of Credits", value: "700" },
     { label: "Category", value: "Nature-based Credits" },
@@ -59,7 +59,7 @@ const TransferDetails = () => {
   ];
 
   return (
-    <div className="h-full w-full p-6">
+    <div className="h-full w-full p-6 ">
       <div
         className="flex mb-4"
         onClick={redirectToTransfer}
@@ -71,8 +71,8 @@ const TransferDetails = () => {
         </span>
       </div>
 
-      <div className=" pt-8 gap-y-4 mt-8 h-screen bg-white rounded-3xl shadow-formShadow pb-8">
-        <div className="grid grid-cols-2">
+      <div className="  pt-8 gap-y-4 mt-8 h-screen bg-white rounded-3xl shadow-formShadow pb-8">
+        <div className=" grid grid-cols-2">
           <div>
             <h1 className="text-2xl font-medium pl-8">Credit Details</h1>
             <div className=" mt-2">
@@ -107,7 +107,7 @@ const TransferDetails = () => {
           </div>
         </div>
 
-        <div className="w-1/2 mt-10">
+        <div className="w-full mt-10">
           <h1 className="text-2xl font-medium pl-8">Documents</h1>
           <div className=" mt-2">
             {DocumentData.map((item, index) => (
@@ -115,7 +115,7 @@ const TransferDetails = () => {
                 key={index}
                 className={`${getRowColor(index)} pl-8 py-1 flex`}
               >
-                <span className="w-1/2 text-[14px]">{item.label} -</span>
+                <span className="w-1/5 text-[14px]">{item.label} </span>
                 <Button
                   className="bg-blue-800 rounded flex justify-center items-center px-3 py-1"
                   borderColor={"blue"}

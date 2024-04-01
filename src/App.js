@@ -46,7 +46,7 @@ function App() {
         { path: "setting/roles", element: <Roles /> },
         { path: "setting/users", element: <UserList /> },
         {path: "/retirementdetails", element: <RetirementDetails/>},
-        { path: "/transferrequest", element: <TransferDetails/>},
+        { path: "/transferdetails", element: <TransferDetails/>},
       ],
     },
   ]);
