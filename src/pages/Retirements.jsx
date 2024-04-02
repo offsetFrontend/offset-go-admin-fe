@@ -12,7 +12,9 @@ const ActionButton = ({ viewButton }) => {
   const navigate = useNavigate();
 
   const handleViewButton = () => {
-    navigate("/RetirementDetails");
+    
+    let id =1;
+    navigate(`/retirementdetails/${id}`);
   };
 
   return (

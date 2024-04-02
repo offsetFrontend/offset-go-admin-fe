@@ -45,8 +45,8 @@ function App() {
         { path: "setting/static-pages", element: <StaticPages /> },
         { path: "setting/roles", element: <Roles /> },
         { path: "setting/users", element: <UserList /> },
-        {path: "/retirementdetails", element: <RetirementDetails/>},
-        { path: "/transferdetails", element: <TransferDetails/>},
+        {path: "/retirementdetails/:id", element: <RetirementDetails/>},
+        { path: "/transferdetails/:id", element: <TransferDetails/>},
       ],
     },
   ]);

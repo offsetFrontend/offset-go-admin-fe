@@ -12,7 +12,8 @@ const ActionButtons = ({ onEditClick }) => {
   const navigate = useNavigate();
 
   const handleEditClick = () => {
-    navigate("/TransferDetails");
+    let id = 1;
+    navigate(`/transferdetails/${id}`);
   };
 
   return (

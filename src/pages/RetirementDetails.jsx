@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Table from "../components/atoms/Table";
+import React from "react";
 import Button from "../components/atoms/Button";
 import Badge from "../components/atoms/Badge";
 import { ReactComponent as SideArrow } from "../assets/svgs/sideArrow.svg";
@@ -26,44 +25,42 @@ const RetirementDetails = () => {
     );
   };
 
-  const CreditData = [
-    { label: "Project name", value: "Forestry" },
-    { label: "Registry", value:<span className="text-blue-800">Verra</span>},
-    { label: "No. of Credits", value: "700" },
-    { label: "Category", value: "Nature-based Credits" },
-    {
-      label: "Type",
-      value: (
+  const RetirementMockData = {
+    creditDetails: {
+      ProjectName: "Forestry",
+      Registry: <span className="text-blue-800">Verra</span>,
+      NumberOfCredits: "700",
+      Category: "Nature-based Credits",
+      Type: (
         <Badge varient="Gold">
           <div className="flex justify-center text-white font-normal items-center w-12 text-xs h-4 ">
             Gold
           </div>
         </Badge>
       ),
+      Status: <StatusButton statusText="in-process" />,
     },
-    { label: "Status", value: <StatusButton statusText="in-process" /> },
-  ];
-  const OwnerData = [
-    { label: "Name", value: "Lorem Lpsum" },
-    { label: "Registry", value:<span className="text-blue-800">Verra</span>},
-    { label: "Registry Username", value: "Lorem@verra" },
-    { label: "Registry ID", value: "#5678" },
-    { label: "Email id", value: "Lorem@email.com" },
-  ];
-  const RetirementData = [
-    { label: "No. of Credits Retired", value: "500" },
-    { label: "Name of the Beneficiary Organization", value: "YP pvt. ltd." },
-    { label: "Goal", value: "Lorem ipsum sit dolor a comit" },
-    { label: "Time", value: "29-02-2023 - 01-01-2024" },
-  ];
-
-  const DocumentData = [
-    { label: "Acknowledgment", value: "500" },
-    { label: "Certificate", value: "YP pvt. ltd." },
-    { label: "OG Certificate", value: "Lorem ipsum sit dolor a comit" },
-    { label: "Document 1", value: "29-02-2023 - 01-01-2024" },
-    { label: "Document 2", value: "29-02-2023 - 01-01-2024" },
-  ];
+    owner: {
+      Name: "Lorem Lpsum",
+      Registry: <span className="text-blue-800">Verra</span>,
+      RegistryUsername: "Lorem@verra",
+      RegistryID: "#5678",
+      EmailId: "Lorem@email.com",
+    },
+    RetirementDetails: {
+      NumberOfCreditsRetired: 800,
+      NameOfBeneficiaryOrganization: "YP pvt. ltd.",
+      Goal: "Akhand Bharat",
+      Time: "29-02-2023 - 01-01-2024",
+    },
+    DocumentData: {
+      doc_one: "Acknowledgment",
+      doc_two: "Certificate",
+      doc_three: "OG Certificate",
+      doc_four: "Document 1",
+      doc_five: "Document 2",
+    },
+  };
 
   return (
     <div className="h-full w-full p-6">
@@ -82,72 +79,74 @@ const RetirementDetails = () => {
           <div>
             <h1 className="text-2xl font-medium pl-8">Credit Details</h1>
             <div className=" mt-2">
-              {CreditData.map((item, index) => (
-                <div
-                  key={index}
-                  className={`${getRowColor(index)} pl-8 py-1 flex`}
-                >
-                  <span className="w-1/3 text-[14px]">{item.label} -</span>
-                  <span className="w-1/3 text-[14px] font-bold">
-                    {item.value}
-                  </span>
-                </div>
-              ))}
+              {Object.entries(RetirementMockData.creditDetails).map(
+                ([label, value], index) => (
+                  <div
+                    key={index}
+                    className={`${getRowColor(index)} pl-8 py-1 flex`}
+                  >
+                    <span className="w-1/3 text-[14px]">{label} -</span>
+                    <span className="w-1/3 text-[14px] font-bold">{value}</span>
+                  </div>
+                )
+              )}
             </div>
           </div>
           <div>
             <h1 className="text-2xl font-medium pl-8">Owner</h1>
             <div className=" mt-2">
-              {OwnerData.map((item, index) => (
-                <div
-                  key={index}
-                  className={`${getRowColor(index)} pl-8  py-1 flex`}
-                >
-                  <span className="w-1/3 text-[14px]">{item.label} -</span>
-                  <span className="w-1/3 text-[14px] font-bold">
-                    {item.value}
-                  </span>
-                </div>
-              ))}
+              {Object.entries(RetirementMockData.owner).map(
+                ([label, value], index) => (
+                  <div
+                    key={index}
+                    className={`${getRowColor(index)} pl-8  py-1 flex`}
+                  >
+                    <span className="w-1/3 text-[14px]">{label} -</span>
+                    <span className="w-1/3 text-[14px] font-bold">{value}</span>
+                  </div>
+                )
+              )}
             </div>
           </div>
         </div>
         <div className="w-full  mt-10">
           <h1 className="text-2xl font-medium pl-8">Retirement Details</h1>
           <div className=" mt-2">
-            {RetirementData.map((item, index) => (
-              <div
-                key={index}
-                className={`${getRowColor(index)} pl-8 py-1 flex`}
-              >
-                <span className="w-1/4 text-[14px]">{item.label} -</span>
-                <span className="w-1/2 text-[14px] font-bold">
-                  {item.value}
-                </span>
-              </div>
-            ))}
+            {Object.entries(RetirementMockData.RetirementDetails).map(
+              ([label, value], index) => (
+                <div
+                  key={index}
+                  className={`${getRowColor(index)} pl-8 py-1 flex`}
+                >
+                  <span className="w-1/4 text-[14px]">{label} -</span>
+                  <span className="w-1/2 text-[14px] font-bold">{value}</span>
+                </div>
+              )
+            )}
           </div>
         </div>
         <div className="w-full mt-10">
           <h1 className="text-2xl font-medium pl-8">Documents</h1>
           <div className=" mt-2">
-            {DocumentData.map((item, index) => (
-              <div
-                key={index}
-                className={`${getRowColor(index)} pl-8 py-1 flex`}
-              >
-                <span className="w-1/5 text-[14px]">{item.label} </span>
-                <Button
-                  className="bg-blue-800 rounded flex justify-center items-center px-3 py-1"
-                  borderColor={"blue"}
-                  variant={"secondary"}
+            {Object.entries(RetirementMockData.DocumentData).map(
+              ([key, value], index) => (
+                <div
+                  key={index}
+                  className={`${getRowColor(index)} pl-8 py-1 flex`}
                 >
-                  <span className="text-white text-[9px] font-bold">
-                    Upload
-                  </span>
-                </Button>
-              </div>
-            ))}
+                  <span className="w-1/5 text-[14px]">{value} </span>
+                  <Button
+                    className="bg-blue-800 rounded flex justify-center items-center px-3 py-1"
+                    borderColor={"blue"}
+                    variant={"secondary"}
+                  >
+                    <span className="text-white text-[9px] font-bold">
+                      Upload
+                    </span>
+                  </Button>
+                </div>
+              )
+            )}
           </div>
         </div>
         <div className="flex justify-center items-center mt-12 ">
