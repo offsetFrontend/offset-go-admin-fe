@@ -20,6 +20,7 @@ import Roles from "./pages/Roles.jsx";
 import UserList from "./pages/UserList.jsx";
 import Root from "./pages/Root.jsx";
 import Projects from "./pages/Projects";
+import Dashboard from "./pages/dashboardManage.jsx";
 import { loader as RootPageLoader } from "./pages/Root.jsx";
 import ViewProject from "./pages/ViewProject.jsx";
 function App() {
@@ -45,6 +46,7 @@ function App() {
         { path: "setting/static-pages", element: <StaticPages /> },
         { path: "setting/roles", element: <Roles /> },
         { path: "setting/users", element: <UserList /> },
+        { path: "/dashboard", element: <Dashboard/>},
       ],
     },
   ]);
